@@ -38,10 +38,6 @@ Post.Comments = function PostComments({ children, ...restProps }) {
   return <Comments {...restProps}>{children}</Comments>;
 };
 
-Post.X = function PostX({ children, ...restProps }) {
-  return <X {...restProps}>{children}</X>;
-};
-
 Post.PostedAt = function PostPostedAt({ children, ...restProps }) {
   return <PostedAt {...restProps}>{children}</PostedAt>;
 };
@@ -54,4 +50,6 @@ Post.Input = function PostInput({ children, ...restProps }) {
   return <Input />;
 };
 
-Post.Button;
+Post.Button = function PostButton({ children, ...restProps }) {
+  return <Button {...restProps}>{children}</Button>;
+};
