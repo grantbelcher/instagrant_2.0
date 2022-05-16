@@ -1,4 +1,20 @@
 import React from "react";
+import {
+  Container,
+  Main,
+  Side,
+  Banner,
+  Image,
+  Body,
+  Icons,
+  IconGroup,
+  Likes,
+  Comments,
+  PostedAt,
+  Section,
+  Input,
+  Button,
+} from "./styles/post";
 
 export default function Post({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
