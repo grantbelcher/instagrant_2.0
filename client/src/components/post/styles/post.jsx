@@ -40,6 +40,8 @@ export const Author = styled.a`
 `;
 export const Location = styled.a`
   font-weight: 300;
+  font-size: 12;
+  color: gray;
 `;
 
 export const ProfilePic = styled.div`

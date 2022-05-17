@@ -9,8 +9,10 @@ const App = () => (
           <Post.Header>
             <Post.ProfilePic></Post.ProfilePic>
             <Post.Info>
-              <Post.Author>author</Post.Author>
-              <Post.Location>location</Post.Location>
+              <Post.Author>destinationhiking</Post.Author>
+              <Post.Location>
+                Havasu Falls, Supai, AZ - Grand Canyon
+              </Post.Location>
             </Post.Info>
           </Post.Header>
           <Post.Options>
