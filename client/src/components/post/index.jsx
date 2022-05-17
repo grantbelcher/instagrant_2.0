@@ -1,9 +1,12 @@
 import React from "react";
+
 import {
   Container,
   Main,
   Side,
   Banner,
+  Header,
+  Options,
   Image,
   Body,
   Icons,
@@ -14,11 +17,40 @@ import {
   Section,
   Input,
   Button,
+  Info,
+  ProfilePic,
+  Location,
+  Author,
 } from "./styles/post";
+
+// Post.X = function X({ children, ...restProps }) {
+//   return <X {...restProps}>{children}</X>;
+// };
+
+// Post.Location = function Location({ children, ...restProps }) {
+//   return <Location {...restProps}>{children}</Location>;
+// };
+// Post.AuthorLink = function AuthorLink({ children, ...restProps }) {
+//   return <AuthorLink {...restProps}>{children}</AuthorLink>;
+// };
 
 export default function Post({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
+
+Post.Info = function PostInfo({ children, ...restProps }) {
+  return <Info {...restProps}>{children}</Info>;
+};
+Post.ProfilePic = function PostProfilePic({ children, ...restProps }) {
+  return <ProfilePic {...restProps}>{children}</ProfilePic>;
+};
+Post.Author = function PostAuthor({ children, ...restProps }) {
+  return <Author {...restProps}>{children}</Author>;
+};
+
+Post.Location = function PostLocation({ children, ...restProps }) {
+  return <Location {...restProps}>{children}</Location>;
+};
 
 Post.Main = function PostMain({ children, ...restProps }) {
   return <Main {...restProps}>{children}</Main>;
@@ -30,6 +62,13 @@ Post.Side = function PostSide({ children, ...restProps }) {
 
 Post.Banner = function PostBanner({ children, ...restProps }) {
   return <Banner {...restProps}>{children}</Banner>;
+};
+Post.Header = function PostHeader({ children, ...restProps }) {
+  return <Header {...restProps}>{children}</Header>;
+};
+
+Post.Options = function PostOptions({ children, ...restProps }) {
+  return <Options>{children}</Options>;
 };
 
 Post.Image = function PostImage({ ...restProps }) {
