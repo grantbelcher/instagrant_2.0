@@ -66,7 +66,10 @@ export const OptionsBtn = styled.button`
   background-color: transparent;
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  width: 100%;
+`;
+
 export const Body = styled.div``;
 export const Icons = styled.div``;
 export const IconGroup = styled.div``;

@@ -19,6 +19,7 @@ const App = () => (
             <Post.OptionsBtn></Post.OptionsBtn>
           </Post.Options>
         </Post.Banner>
+        <Post.Image src="/images/hood.jpg" alt="falls" />
       </Post>
     </div>
   </>
