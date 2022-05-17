@@ -38,7 +38,9 @@ export const Info = styled.div`
 export const Author = styled.a`
   font-weight: bold;
 `;
-export const Location = styled.a``;
+export const Location = styled.a`
+  font-weight: 300;
+`;
 
 export const ProfilePic = styled.div`
   height: 35px;
