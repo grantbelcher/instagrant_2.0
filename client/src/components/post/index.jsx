@@ -74,11 +74,7 @@ Post.Options = function PostOptions({ children, ...restProps }) {
 };
 
 Post.OptionsBtn = function PostOptionsBtn({ children, ...restProps }) {
-  return (
-    <OptionsBtn>
-      <DotsThree size={32} />
-    </OptionsBtn>
-  );
+  return <OptionsBtn {...restProps}>{children}</OptionsBtn>;
 };
 
 Post.Image = function PostImage({ ...restProps }) {

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 600px;
+  height: 700px;
   background-color: rgba( 255, 255, 255), 1);
   border: 1px solid #dbdbdb;
   border: 1px solid rgba( 219, 219, 219), 1);
@@ -22,7 +22,7 @@ export const Header = styled.header`
   align-items: center;
   height: 70px;
   width: 85%;
-  padding: 14px 4px 14px 16px;
+  padding: 10px 5px 10px 5px;
 
   * {
     padding: 2px;
@@ -52,8 +52,8 @@ export const ProfilePic = styled.div`
 `;
 
 export const Options = styled.div`
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,9 +70,23 @@ export const Image = styled.img`
   width: 100%;
 `;
 
-export const Body = styled.div``;
-export const Icons = styled.div``;
-export const IconGroup = styled.div``;
+export const Body = styled.div`
+  width: 100%;
+  height: 250px;
+`;
+export const Icons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 55px;
+  padding-right: 5px;
+`;
+export const IconGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
 export const Likes = styled.p``;
 export const Comments = styled.p``;
 export const PostedAt = styled.p``;
