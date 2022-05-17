@@ -12,22 +12,27 @@ export const Main = styled.div``;
 export const Side = styled.div``;
 export const Banner = styled.div`
   display: flex;
+  align-items: center;
   height: 70px;
   border-bottom: 1px solid rgba(239, 239, 239, 1);
 `;
 export const Header = styled.header`
   display: flex;
   flex-direction: row;
-  background-color: teal;
+  align-items: center;
   height: 70px;
   width: 85%;
   padding: 14px 4px 14px 16px;
+
+  * {
+    padding: 2px;
+  }
 `;
 
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 14px;
+  margin-left: 5px;
 `;
 
 export const Author = styled.a`
@@ -36,15 +41,25 @@ export const Author = styled.a`
 export const Location = styled.a``;
 
 export const ProfilePic = styled.div`
-  height: 32px;
-  width: 32px;
+  height: 35px;
+  width: 35px;
+  border-radius: 35px;
   background-color: red;
 `;
 
-export const Options = styled.button`
-  background-color: yellow;
-  width: 15%;
+export const Options = styled.div`
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const OptionsBtn = styled.button`
+  height: 40px;
+  width: 40px;
   border: none;
+  background-color: transparent;
 `;
 
 export const Image = styled.img``;

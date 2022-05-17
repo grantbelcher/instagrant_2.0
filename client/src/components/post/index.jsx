@@ -1,4 +1,5 @@
 import React from "react";
+import { DotsThree } from "phosphor-react";
 
 import {
   Container,
@@ -7,6 +8,7 @@ import {
   Banner,
   Header,
   Options,
+  OptionsBtn,
   Image,
   Body,
   Icons,
@@ -69,6 +71,14 @@ Post.Header = function PostHeader({ children, ...restProps }) {
 
 Post.Options = function PostOptions({ children, ...restProps }) {
   return <Options>{children}</Options>;
+};
+
+Post.OptionsBtn = function PostOptionsBtn({ children, ...restProps }) {
+  return (
+    <OptionsBtn>
+      <DotsThree size={32} />
+    </OptionsBtn>
+  );
 };
 
 Post.Image = function PostImage({ ...restProps }) {

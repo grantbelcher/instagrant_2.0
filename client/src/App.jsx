@@ -13,7 +13,9 @@ const App = () => (
               <Post.Location>location</Post.Location>
             </Post.Info>
           </Post.Header>
-          <Post.Options></Post.Options>
+          <Post.Options>
+            <Post.OptionsBtn></Post.OptionsBtn>
+          </Post.Options>
         </Post.Banner>
       </Post>
     </div>
