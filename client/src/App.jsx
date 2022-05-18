@@ -32,30 +32,15 @@ const App = () => (
         <Post.Body>
           <Post.Icons>
             <Post.IconGroup>
-              <Post.Options>
-                <Post.OptionsBtn>
-                  <Heart size={30} />
-                </Post.OptionsBtn>
-              </Post.Options>
-              <Post.Options>
-                <Post.OptionsBtn>
-                  <ChatCircle size={30} />
-                </Post.OptionsBtn>
-              </Post.Options>
-              <Post.Options>
-                <Post.OptionsBtn>
-                  <PaperPlaneTilt size={30} />
-                </Post.OptionsBtn>
-              </Post.Options>
+              <Heart size={30} />
+              <ChatCircle size={30} />
+              <PaperPlaneTilt size={30} />
             </Post.IconGroup>
             <Post.IconGroup>
-              <Post.Options>
-                <Post.OptionsBtn>
-                  <BookmarkSimple size={30} />
-                </Post.OptionsBtn>
-              </Post.Options>
+              <BookmarkSimple size={30} />
             </Post.IconGroup>
           </Post.Icons>
+          <Post.Likes>37955 likes</Post.Likes>
         </Post.Body>
       </Post>
     </div>

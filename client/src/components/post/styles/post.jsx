@@ -12,6 +12,7 @@ export const Main = styled.div``;
 export const Side = styled.div``;
 export const Banner = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 70px;
   border-bottom: 1px solid rgba(239, 239, 239, 1);
@@ -22,7 +23,7 @@ export const Header = styled.header`
   align-items: center;
   height: 70px;
   width: 85%;
-  padding: 10px 5px 10px 5px;
+  padding: 10px 10px 10px 10;
 
   * {
     padding: 2px;
@@ -57,6 +58,7 @@ export const Options = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 10px;
 `;
 
 export const OptionsBtn = styled.button`
@@ -70,26 +72,39 @@ export const Image = styled.img`
   width: 100%;
 `;
 
+// 165
 export const Body = styled.div`
   width: 100%;
-  height: 250px;
+  height: 215px;
+  padding: 10px;
 `;
-export const Icons = styled.div`
+export const Icons = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 55px;
-  padding-right: 5px;
+  padding-right: 0 10px;
 `;
 export const IconGroup = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  * {
+    margin-right: 8px;
+  }
+  > * {
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
 `;
-export const Likes = styled.p``;
+export const Likes = styled.section`
+  font-weight: bold;
+`;
 export const Comments = styled.p``;
 export const PostedAt = styled.p``;
-export const Section = styled.div``;
+export const NewComment = styled.section``;
 export const Input = styled.input``;
 export const Button = styled.button``;
