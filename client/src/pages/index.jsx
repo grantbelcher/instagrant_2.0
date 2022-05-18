@@ -9,6 +9,7 @@ import {
 } from "phosphor-react";
 
 import { Post } from "../components";
+import Comments from "../containers/comments";
 export default function PostPage({ children, ...restProps }) {
   return (
     <Main {...restProps}>
@@ -34,6 +35,26 @@ export default function PostPage({ children, ...restProps }) {
                 </Post.OptionsBtn>
               </Post.Options>
             </Post.Banner>
+            <Comments />
+            <Post.Body>
+              <Post.Icons>
+                <Post.IconGroup>
+                  <Heart size={30} />
+                  <ChatCircle size={30} />
+                  <PaperPlaneTilt size={30} />
+                </Post.IconGroup>
+                <Post.IconGroup>
+                  <BookmarkSimple size={30} />
+                </Post.IconGroup>
+              </Post.Icons>
+              <Post.Likes>37955 likes</Post.Likes>
+
+              <Post.PostedAt>4 hours ago</Post.PostedAt>
+              <Post.NewComment>
+                <Post.Input />
+                <Post.Submit>Post</Post.Submit>
+              </Post.NewComment>
+            </Post.Body>
           </Post.Side>
         </Article>
       </Container>

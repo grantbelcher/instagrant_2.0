@@ -11,12 +11,10 @@ export const Container = styled.div`
 export const Main = styled.main`
   width: 60%;
   height: 100%;
-  border: 1px solid #dbdbdb;
 `;
 export const Side = styled.aside`
   width: 40%;
   height: 100%;
-  border: 1px solid #dbdbdb;
 `;
 export const Banner = styled.div`
   display: flex;
@@ -143,6 +141,7 @@ export const NewComment = styled.form`
   display: flex;
   flex-direction: row;
   height: 55px;
+  border-top: black;
 `;
 export const Input = styled.input`
   border: none;
