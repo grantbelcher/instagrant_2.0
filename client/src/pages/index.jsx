@@ -14,7 +14,9 @@ export default function PostPage({ children, ...restProps }) {
     <Main {...restProps}>
       <Container>
         <Article>
-          <Post.Main></Post.Main>
+          <Post.Main>
+            <Post.Image fullHeight={true} src="/images/hood.jpg" alt="falls" />
+          </Post.Main>
           <Post.Side>
             <Post.Banner>
               <Post.Header>

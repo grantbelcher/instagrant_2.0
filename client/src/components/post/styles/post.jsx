@@ -78,6 +78,7 @@ export const OptionsBtn = styled.button`
 
 export const Image = styled.img`
   width: 100%;
+  height: ${({ fullHeight }) => (fullHeight ? `100%` : null)};
 `;
 
 // 165
