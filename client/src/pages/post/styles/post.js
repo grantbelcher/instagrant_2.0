@@ -5,9 +5,7 @@ export const Main = styled.main`
 `;
 // justify-content: normal;
 export const Container = styled.div`
-  height: 110vh;
   padding: 4vh 20px 0;
-  border: solid 0.5px; black;
 `;
 
 //align-items: center;
@@ -19,9 +17,10 @@ export const Article = styled.div`
   background-color: paleyellow;
   border: solid 0.5px; black;
   align-items: center;
+  height: 600px;
+  width: 700px;
   margin: 0 auto;
-  width: 100%;
-  height: 105vh;
+
   border: 1px solid rgba(219,219,219, 1);
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
