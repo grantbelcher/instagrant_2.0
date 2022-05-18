@@ -8,8 +8,16 @@ export const Container = styled.div`
   border: 1px solid rgba( 219, 219, 219), 1);
   border-radius: 3px;
 `;
-export const Main = styled.div``;
-export const Side = styled.div``;
+export const Main = styled.main`
+  width: 60%;
+  height: 100%;
+  border: 1px solid #dbdbdb;
+`;
+export const Side = styled.aside`
+  width: 40%;
+  height: 100%;
+  border: 1px solid #dbdbdb;
+`;
 export const Banner = styled.div`
   display: flex;
   justify-content: space-between;

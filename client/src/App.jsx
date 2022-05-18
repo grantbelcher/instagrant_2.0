@@ -1,13 +1,10 @@
 import React from "react";
-import { Post } from "./components";
-import {
-  Heart,
-  ChatCircle,
-  PaperPlaneTilt,
-  BookmarkSimple,
-  DotsThree,
-} from "phosphor-react";
+import PostPage from "./pages";
 
-const App = () => <>App</>;
+const App = () => (
+  <>
+    <PostPage />
+  </>
+);
 
 export default App;
