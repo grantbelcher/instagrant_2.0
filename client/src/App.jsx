@@ -41,6 +41,17 @@ const App = () => (
             </Post.IconGroup>
           </Post.Icons>
           <Post.Likes>37955 likes</Post.Likes>
+          <Post.Caption>
+            <a className="handle">grantb69</a> Round 4 of the Sydney Surf Pro
+            Longboard is on and @harrisonsan has hit the water....{" "}
+            <a className="expand">more</a>
+          </Post.Caption>
+          <Post.Comments>View all 21 comments</Post.Comments>
+          <Post.PostedAt>4 hours ago</Post.PostedAt>
+          <Post.NewComment>
+            <Post.Input />
+            <Post.Submit>Post</Post.Submit>
+          </Post.NewComment>
         </Post.Body>
       </Post>
     </div>

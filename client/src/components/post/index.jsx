@@ -15,10 +15,11 @@ import {
   IconGroup,
   Likes,
   Comments,
+  Caption,
   PostedAt,
-  Section,
+  NewComment,
   Input,
-  Button,
+  Submit,
   Info,
   ProfilePic,
   Location,
@@ -99,18 +100,22 @@ Post.Comments = function PostComments({ children, ...restProps }) {
   return <Comments {...restProps}>{children}</Comments>;
 };
 
+Post.Caption = function PostCaption({ children, ...restProps }) {
+  return <Caption {...restProps}>{children}</Caption>;
+};
+
 Post.PostedAt = function PostPostedAt({ children, ...restProps }) {
   return <PostedAt {...restProps}>{children}</PostedAt>;
 };
 
 Post.NewComment = function PostNewComment({ children, ...restProps }) {
-  return <Section {...restProps}>{children}</Section>;
+  return <NewComment {...restProps}>{children}</NewComment>;
 };
 
 Post.Input = function PostInput({ children, ...restProps }) {
   return <Input />;
 };
 
-Post.Button = function PostButton({ children, ...restProps }) {
-  return <Button {...restProps}>{children}</Button>;
+Post.Submit = function PostSubmit({ children, ...restProps }) {
+  return <Submit {...restProps}>{children}</Submit>;
 };

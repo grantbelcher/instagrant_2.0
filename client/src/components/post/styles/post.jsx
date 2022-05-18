@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 700px;
+
   background-color: rgba( 255, 255, 255), 1);
   border: 1px solid #dbdbdb;
   border: 1px solid rgba( 219, 219, 219), 1);
@@ -77,6 +77,9 @@ export const Body = styled.div`
   width: 100%;
   height: 215px;
   padding: 10px;
+  & * {
+    margin-bottom: 0.4rem;
+  }
 `;
 export const Icons = styled.section`
   display: flex;
@@ -84,6 +87,7 @@ export const Icons = styled.section`
   justify-content: space-between;
   height: 55px;
   padding-right: 0 10px;
+  margin-bottom: 0;
 `;
 export const IconGroup = styled.div`
   display: flex;
@@ -103,8 +107,46 @@ export const IconGroup = styled.div`
 export const Likes = styled.section`
   font-weight: bold;
 `;
-export const Comments = styled.p``;
-export const PostedAt = styled.p``;
-export const NewComment = styled.section``;
-export const Input = styled.input``;
-export const Button = styled.button``;
+export const Comments = styled.a`
+  color: gray;
+`;
+
+// max width of 85% on desktop?
+export const Caption = styled.section`
+  width: 95%;
+
+  & .handle {
+    font-weight: bold;
+  }
+  & .expand {
+    color: gray;
+  }
+`;
+export const PostedAt = styled.a`
+  display: block;
+  letter-spacing: 0.2px;
+  color: gray;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-top: 0.4rem;
+`;
+export const NewComment = styled.form`
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+`;
+export const Input = styled.input`
+  border: none;
+  width: 95%;
+  &:active {
+    border: none;
+  }
+`;
+export const Submit = styled.button`
+  border: none;
+  background: none;
+  color: rgb(0, 149, 246);
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+`;
