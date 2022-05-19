@@ -33,12 +33,20 @@ export default function PostContainer({ windowDimensions }) {
         <Post.Body deviceType={windowDimensions}>
           <Post.Icons>
             <Post.IconGroup>
-              <Heart size={30} />
-              <ChatCircle size={30} />
-              <PaperPlaneTilt size={30} />
+              <Post.IconBtn>
+                <Heart size={30} />
+              </Post.IconBtn>
+              <Post.IconBtn>
+                <ChatCircle size={30} />
+              </Post.IconBtn>
+              <Post.IconBtn>
+                <PaperPlaneTilt size={30} />
+              </Post.IconBtn>
             </Post.IconGroup>
             <Post.IconGroup>
-              <BookmarkSimple size={30} />
+              <Post.IconBtn>
+                <BookmarkSimple size={30} />
+              </Post.IconBtn>
             </Post.IconGroup>
           </Post.Icons>
           <Post.Likes>37955 likes</Post.Likes>

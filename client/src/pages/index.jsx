@@ -1,15 +1,5 @@
 import React from "react";
 import { Main, Container, Article } from "./post/styles/post";
-import {
-  Heart,
-  ChatCircle,
-  PaperPlaneTilt,
-  BookmarkSimple,
-  DotsThree,
-  Smiley,
-} from "phosphor-react";
-
-import { Post } from "../components";
 
 import PostContainer from "../containers/post";
 import PostDesktop from "../containers/postDesktop";
