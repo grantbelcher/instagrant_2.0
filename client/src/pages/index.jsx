@@ -6,6 +6,7 @@ import {
   PaperPlaneTilt,
   BookmarkSimple,
   DotsThree,
+  Smiley,
 } from "phosphor-react";
 
 import { Post } from "../components";
@@ -39,22 +40,34 @@ export default function PostPage({ children, ...restProps }) {
             <Post.Body>
               <Post.Icons>
                 <Post.IconGroup>
-                  <Heart size={30} />
-                  <ChatCircle size={30} />
-                  <PaperPlaneTilt size={30} />
+                  <Post.IconBtn>
+                    <Heart size={30} />
+                  </Post.IconBtn>
+                  <Post.IconBtn>
+                    <ChatCircle size={30} />
+                  </Post.IconBtn>
+                  <Post.IconBtn>
+                    <PaperPlaneTilt size={30} />
+                  </Post.IconBtn>
                 </Post.IconGroup>
                 <Post.IconGroup>
-                  <BookmarkSimple size={30} />
+                  <Post.IconBtn>
+                    <BookmarkSimple size={30} />
+                  </Post.IconBtn>
                 </Post.IconGroup>
               </Post.Icons>
               <Post.Likes>37955 likes</Post.Likes>
 
               <Post.PostedAt>4 hours ago</Post.PostedAt>
-              <Post.NewComment>
-                <Post.Input />
-                <Post.Submit>Post</Post.Submit>
-              </Post.NewComment>
             </Post.Body>
+            <Post.NewComment>
+              <Post.IconBtn>
+                <Smiley size={30} />
+              </Post.IconBtn>
+
+              <Post.Input placeholder="Add a comment..." />
+              <Post.Submit>Post</Post.Submit>
+            </Post.NewComment>
           </Post.Side>
         </Article>
       </Container>

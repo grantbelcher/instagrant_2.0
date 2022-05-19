@@ -79,11 +79,12 @@ export const Image = styled.img`
   height: ${({ fullHeight }) => (fullHeight ? `100%` : null)};
 `;
 
-// 165
+// height: 170 vs 215
 export const Body = styled.div`
   width: 100%;
-  height: 215px;
+  height: 118px;
   padding: 10px;
+  border-bottom: 1px solid rgba(239, 239, 239, 1);
   & * {
     margin-bottom: 0.4rem;
   }
@@ -93,7 +94,6 @@ export const Icons = styled.section`
   flex-direction: row;
   justify-content: space-between;
   height: 55px;
-  padding-right: 0 10px;
   margin-bottom: 0;
 `;
 export const IconGroup = styled.div`
@@ -102,10 +102,8 @@ export const IconGroup = styled.div`
   justify-content: center;
   align-items: center;
 
-  * {
+  > button {
     margin-right: 8px;
-  }
-  > * {
     &:last-of-type {
       margin-right: 0;
     }
@@ -139,13 +137,26 @@ export const PostedAt = styled.a`
 `;
 export const NewComment = styled.form`
   display: flex;
+  align-items: center;
   flex-direction: row;
-  height: 55px;
+  padding: 10px;
+  height: 50px;
   border-top: black;
+  margin-bottom: 0;
 `;
+
+export const IconBtn = styled.button`
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+`;
+
+export const Form = styled.form``;
 export const Input = styled.input`
   border: none;
   width: 95%;
+  margin-left: 10px;
   &:active {
     border: none;
   }

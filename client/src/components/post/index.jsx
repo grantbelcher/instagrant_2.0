@@ -13,6 +13,7 @@ import {
   Body,
   Icons,
   IconGroup,
+  IconBtn,
   Likes,
   Comments,
   Caption,
@@ -93,6 +94,10 @@ Post.IconGroup = function PostIconGroup({ children, ...restProps }) {
   return <IconGroup {...restProps}>{children}</IconGroup>;
 };
 
+Post.IconBtn = function PostIconBtn({ children, ...restProps }) {
+  return <IconBtn {...restProps}>{children}</IconBtn>;
+};
+
 Post.Likes = function PostLikes({ children, ...restProps }) {
   return <Likes {...restProps}>{children}</Likes>;
 };
@@ -113,7 +118,7 @@ Post.NewComment = function PostNewComment({ children, ...restProps }) {
 };
 
 Post.Input = function PostInput({ children, ...restProps }) {
-  return <Input />;
+  return <Input {...restProps} />;
 };
 
 Post.Submit = function PostSubmit({ children, ...restProps }) {

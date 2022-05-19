@@ -20,7 +20,6 @@ export const Article = styled.div`
   height: 600px;
   width: 700px;
   margin: 0 auto;
-
   border: 1px solid rgba(219,219,219, 1);
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
