@@ -13,13 +13,14 @@ export const Container = styled.div`
 // width: 100%;
 export const Article = styled.div`
   display: flex;
-  flex-wrap: wrap;
+
 
   background-color: paleyellow;
   border: solid 0.5px; black;
   align-items: center;
   height: 600px;
-  max-width: 700px;
+  min-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
   border: 1px solid rgba(219,219,219, 1);
   border-bottom-right-radius: 3px;
