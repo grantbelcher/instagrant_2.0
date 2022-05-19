@@ -11,7 +11,10 @@ import {
   Info,
   Date,
   Button,
+  ViewReplies,
+  IconBtn,
 } from "./styles/comment";
+import { Heart } from "phosphor-react";
 
 export default function Comment({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -57,4 +60,21 @@ Comment.Date = function CommentDate({ children, ...restProps }) {
 
 Comment.Button = function CommentButton({ children, ...restProps }) {
   return <Button {...restProps}>{children}</Button>;
+};
+
+Comment.ViewReplies = function CommentViewReplies({ children, ...restProps }) {
+  return (
+    <ViewReplies {...restProps}>
+      <div />
+      <span>View replies</span>
+    </ViewReplies>
+  );
+};
+
+Comment.IconBtn = function CommentIconBtn({ children, ...restProps }) {
+  return (
+    <IconBtn {...restProps}>
+      <Heart />
+    </IconBtn>
+  );
 };

@@ -35,14 +35,17 @@ export default function Comments() {
                 All I see are two linebackers. One happens to play MLB
               </Comment.Text>
               <Comment.Info>
-                <a>35m</a>
+                <Comment.Date>53w</Comment.Date>
                 <Comment.Button>43 likes</Comment.Button>
                 <Comment.Button>Reply</Comment.Button>
               </Comment.Info>
+              <Comment.ViewReplies />
             </Comment.TextContainer>
           </Comment.Content>
         </Comment.LeftGroup>
-        <Comment.RightGroup>H</Comment.RightGroup>
+        <Comment.RightGroup>
+          <Comment.IconBtn />
+        </Comment.RightGroup>
       </Comment>
     </Container>
   );
