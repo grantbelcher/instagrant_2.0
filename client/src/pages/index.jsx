@@ -12,6 +12,7 @@ import {
 import { Post } from "../components";
 import Comments from "../containers/comments";
 export default function PostPage({ children, ...restProps }) {
+  console.log("rerender");
   return (
     <Main {...restProps}>
       <Container>

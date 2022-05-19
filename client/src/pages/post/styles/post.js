@@ -13,14 +13,17 @@ export const Container = styled.div`
 // width: 100%;
 export const Article = styled.div`
   display: flex;
-  max-width: 815px;
+  flex-wrap: wrap;
+
   background-color: paleyellow;
   border: solid 0.5px; black;
   align-items: center;
   height: 600px;
-  width: 700px;
+  max-width: 700px;
   margin: 0 auto;
   border: 1px solid rgba(219,219,219, 1);
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
+
+
 `;

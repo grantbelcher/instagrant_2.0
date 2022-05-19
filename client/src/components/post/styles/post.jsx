@@ -9,11 +9,11 @@ export const Container = styled.div`
   border-radius: 3px;
 `;
 export const Main = styled.main`
-  width: 60%;
+  flex: 60%;
   height: 100%;
 `;
 export const Side = styled.aside`
-  width: 40%;
+  flex: 40%;
   height: 100%;
 `;
 export const Banner = styled.div`
