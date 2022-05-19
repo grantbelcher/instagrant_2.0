@@ -10,14 +10,33 @@ import {
 } from "phosphor-react";
 
 import { Post } from "../components";
-import Comments from "../containers/comments";
+
+import PostContainer from "../containers/post";
+import PostDesktop from "../containers/postDesktop";
+import useWindowDimensions from "../hooks/useWindowDimensions";
+
 export default function PostPage({ children, ...restProps }) {
-  console.log("rerender");
+  const windowDimensions = useWindowDimensions();
+
+  const desktopPage = (
+    <Container>
+      <Article>
+        <PostDesktop windowDimensions={windowDimensions} />
+      </Article>
+    </Container>
+  );
+
+  const mobilePage = <PostContainer windowDimensions={windowDimensions} />;
+
   return (
     <Main {...restProps}>
-      <Container>
-        <Article>
-          <Post.Main>
+      {windowDimensions === "desktop" ? desktopPage : mobilePage}
+    </Main>
+  );
+}
+
+{
+  /* <Post.Main>
             <Post.Image fullHeight={true} src="/images/hood.jpg" alt="falls" />
           </Post.Main>
           <Post.Side>
@@ -69,9 +88,5 @@ export default function PostPage({ children, ...restProps }) {
               <Post.Input placeholder="Add a comment..." />
               <Post.Submit>Post</Post.Submit>
             </Post.NewComment>
-          </Post.Side>
-        </Article>
-      </Container>
-    </Main>
-  );
+          </Post.Side> */
 }

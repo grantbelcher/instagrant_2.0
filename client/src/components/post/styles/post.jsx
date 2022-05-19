@@ -16,6 +16,7 @@ export const Side = styled.aside`
   flex: 40%;
   height: 100%;
 `;
+
 export const Banner = styled.div`
   display: flex;
   justify-content: space-between;
@@ -80,11 +81,15 @@ export const Image = styled.img`
 `;
 
 // height: 170 vs 215
+
+// only add height of 118 & border when viewed as page on desktop, otherwise add height 170? no border
 export const Body = styled.div`
   width: 100%;
-  height: 118px;
+  height: ${({ deviceType }) => (deviceType === "desktop" ? "118px" : null)};
   padding: 10px;
-  border-bottom: 1px solid rgba(239, 239, 239, 1);
+  border-bottom: ${({ deviceType }) =>
+    deviceType === "desktop" ? "1px solid rgba(239, 239, 239, 1);" : null};
+
   & * {
     margin-bottom: 0.4rem;
   }
@@ -135,6 +140,8 @@ export const PostedAt = styled.a`
   font-size: 10px;
   margin-top: 0.4rem;
 `;
+
+// do not render on mobile
 export const NewComment = styled.form`
   display: flex;
   align-items: center;

@@ -5,7 +5,8 @@ body {
 }
 /* "Segoe UI",Roboto,Helvetica,Arial,sans-serif; */
 .post-list {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
 }
 
 * {
