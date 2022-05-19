@@ -3,8 +3,14 @@ import styled from "styled-components";
 // desktop
 // margin-bottom: 16px
 // padding: 12px 0;
-export const Container = styled.li``;
-export const RightGroup = styled.div``;
+export const Container = styled.li`
+  display: flex;
+`;
+export const RightGroup = styled.div`
+  background-color: red;
+  width: 12px;
+  margin-left: 16px;
+`;
 
 // left group
 // flex-direction: row;
@@ -14,18 +20,29 @@ export const LeftGroup = styled.div``;
 // container of 42 x 42?
 // add margin? padding left 18px
 export const ProfilePic = styled.div`
+  flex-shrink: 0;
   height: 35px;
   width: 35px;
   border-radius: 35px;
   background-color: red;
+  margin-right: 18px;
 `;
 // no margin no padding
-export const Content = styled.div``;
+export const Content = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
-export const TextContainer = styled.div``;
+export const TextContainer = styled.div`
+  background-color: green;
+`;
 
 // remove any margins or possibly change to em or span or other inline element
-export const Name = styled.h3``;
+export const Name = styled.h3`
+  display: inline;
+  margin-right: 5px;
+  font-size: 14px;
+`;
 
 export const Text = styled.span``;
 

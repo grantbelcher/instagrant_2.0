@@ -2,9 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Comment } from "../components";
 
-const Container = styled.div`
+const Container = styled.ul`
   height: 360px;
   border-bottom: 1px solid rgba(239, 239, 239, 1);
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
 `;
 
 // Container,
@@ -24,9 +27,9 @@ export default function Comments() {
     <Container>
       <Comment>
         <Comment.LeftGroup>
-          <Comment.TextContainer>
+          <Comment.Content>
             <Comment.ProfilePic />
-            <Comment.Content>
+            <Comment.TextContainer>
               <Comment.Name>ramesjivers</Comment.Name>
               <Comment.Text>
                 All I see are two linebackers. One happens to play MLB
@@ -36,10 +39,10 @@ export default function Comments() {
                 <Comment.Button>43 likes</Comment.Button>
                 <Comment.Button>Reply</Comment.Button>
               </Comment.Info>
-            </Comment.Content>
-          </Comment.TextContainer>
+            </Comment.TextContainer>
+          </Comment.Content>
         </Comment.LeftGroup>
-        <Comment.RightGroup></Comment.RightGroup>
+        <Comment.RightGroup>H</Comment.RightGroup>
       </Comment>
     </Container>
   );

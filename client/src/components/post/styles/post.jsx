@@ -15,6 +15,7 @@ export const Main = styled.main`
 export const Side = styled.aside`
   flex: 40%;
   height: 100%;
+  min-width: 335px;
 `;
 
 export const Banner = styled.div`
