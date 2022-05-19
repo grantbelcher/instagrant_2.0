@@ -5,6 +5,7 @@ import styled from "styled-components";
 // padding: 12px 0;
 export const Container = styled.li`
   display: flex;
+  margin-bottom: 16px;
 `;
 export const RightGroup = styled.div`
   width: 12px;

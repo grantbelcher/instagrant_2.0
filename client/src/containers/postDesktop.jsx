@@ -1,6 +1,6 @@
 import React from "react";
 import { Post } from "../components";
-import Comments from "./comments";
+import Comments from "./CommentList";
 import {
   Heart,
   ChatCircle,
