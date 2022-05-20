@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.ul`
   padding: 0;
-  background: palegreen;
   margin-left: 44px;
 `;
 export const ViewBtn = styled.button`

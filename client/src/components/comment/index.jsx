@@ -16,8 +16,17 @@ import {
 } from "./styles/comment";
 import { Heart } from "phosphor-react";
 
-export default function Comment({ children, ...restProps }) {
-  return <Container {...restProps}>{children}</Container>;
+export default function Comment({
+  visible = true,
+  isReply,
+  children,
+  ...restProps
+}) {
+  return (
+    <Container visible={visible} {...restProps}>
+      {children}
+    </Container>
+  );
 }
 
 Comment.LeftGroup = function CommentLeftGroup({ children, ...restProps }) {

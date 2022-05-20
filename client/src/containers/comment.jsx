@@ -1,10 +1,10 @@
 import React from "react";
 import { Comment } from "../components";
 import ReplyList from "./ReplyList";
-export default function CommentContainer({ isReply = false }) {
+export default function CommentContainer({ isReply = false, visible }) {
   return (
     <>
-      <Comment>
+      <Comment isReply={isReply} visible={visible}>
         <Comment.LeftGroup>
           <Comment.Content>
             <Comment.ProfilePic />

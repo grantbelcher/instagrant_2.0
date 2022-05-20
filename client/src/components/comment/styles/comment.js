@@ -4,7 +4,7 @@ import styled from "styled-components";
 // margin-bottom: 16px
 // padding: 12px 0;
 export const Container = styled.li`
-  display: flex;
+  display: ${({ visible }) => (visible ? "flex" : "none")};
   margin-bottom: 16px;
 `;
 export const RightGroup = styled.div`
