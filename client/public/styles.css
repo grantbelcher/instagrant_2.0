@@ -9,6 +9,11 @@ body {
   margin: 0 auto;
 }
 
+.reply-list {
+  margin: 16px 0 0 54px;
+  background: palegreen;
+}
+
 * {
   box-sizing: border-box;
 }

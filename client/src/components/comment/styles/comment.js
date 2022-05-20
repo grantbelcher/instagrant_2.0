@@ -94,6 +94,11 @@ export const Info = styled.div`
 // rgba(var(--f52,142,142,142),1)
 // font-weight: 400;
 
+export const Replies = styled.ul`
+  margin: 16px 0 0 54px;
+  background: palegreen;
+`;
+
 export const ViewReplies = styled.button`
   background: transparent;
   border: none;
