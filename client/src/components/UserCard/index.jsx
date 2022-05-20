@@ -1,16 +1,21 @@
 import React from "react";
 import {
   Container,
+  Group,
   Avatar,
   Names,
-  Link,
   Handle,
   FollowBtn,
+  Name,
 } from "./styles/userCard";
 
 export default function UserCard({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
+
+UserCard.Group = function UserCardGroup({ children, ...restProps }) {
+  return <Group {...restProps}>{children}</Group>;
+};
 
 UserCard.Avatar = function UserCardAvatar({ children, ...restProps }) {
   return <Avatar {...restProps}>{children}</Avatar>;
@@ -20,14 +25,14 @@ UserCard.Names = function UserCardNames({ children, ...restProps }) {
   return <Names {...restProps}>{children}</Names>;
 };
 
-UserCard.Link = function UserCardLink({ children, ...restProps }) {
-  return <Link {...restProps}>{children}</Link>;
+UserCard.Name = function UserCardLink({ children, ...restProps }) {
+  return <Name {...restProps}>{children}</Name>;
 };
 
 UserCard.Handle = function UserCardHandle({ children, ...restProps }) {
   return <Handle {...restProps}>{children}</Handle>;
 };
 
-UserCard.FollowBtn = funtion UserCardFollowBtn({ children, ...restProps }) {
-  return <FollowBtn {...restProps}>{children}</FollowBtn>
-}
+UserCard.FollowBtn = function UserCardFollowBtn({ children, ...restProps }) {
+  return <FollowBtn {...restProps}>{children}</FollowBtn>;
+};

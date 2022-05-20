@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Post } from "../components";
+import UserList from "./UserList";
+
 import {
   Heart,
   ChatCircle,
@@ -9,7 +11,15 @@ import {
 } from "phosphor-react";
 
 export default function PostContainer({ windowDimensions }) {
-  return (
+  const [viewLikes, setViewLikes] = useState(true);
+
+  const likesButtonHandler = () => {
+    setViewLikes((prevState) => !prevState);
+  };
+
+  return viewLikes ? (
+    <UserList />
+  ) : (
     <>
       <Post>
         <Post.Banner>
@@ -49,7 +59,7 @@ export default function PostContainer({ windowDimensions }) {
               </Post.IconBtn>
             </Post.IconGroup>
           </Post.Icons>
-          <Post.Likes>37955 likes</Post.Likes>
+          <Post.Likes onClick={likesButtonHandler}>37955 likes</Post.Likes>
           <Post.Caption>
             <a className="handle">grantb69</a> Round 4 of the Sydney Surf Pro
             Longboard is on and @harrisonsan has hit the water....{" "}
