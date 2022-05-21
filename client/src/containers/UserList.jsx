@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { UserCard } from "../components";
+import { UserCard, Banner } from "../components";
+import { CaretLeft } from "phosphor-react";
 
 let userInfo = [
   {
@@ -109,5 +110,16 @@ export default function UserList({ children, ...restProps }) {
     );
   });
 
-  return <div className="user-list">{elements}</div>;
+  return (
+    <>
+      <Banner>
+        <Banner.IconBtn>
+          <CaretLeft size={30} />
+        </Banner.IconBtn>
+        <Banner.Text>Likes</Banner.Text>
+        <Banner.RightSpace />
+      </Banner>
+      <div className="user-list">{elements}</div>
+    </>
+  );
 }
