@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-// mobile
-
 export const Container = styled.div`
   @media (min-width: 736px) {
     padding: 30px 20px 0;
@@ -10,13 +8,6 @@ export const Container = styled.div`
     max-width: 935px;
   }
 `;
-
-// flex-grow: 1;
-
-// @media (max-width: 736px) {
-//   max-width: 935px;
-//   width: 100%;
-// }
 
 export const Header = styled.div`
   display: flex;
@@ -33,35 +24,6 @@ export const Header = styled.div`
   }
 `;
 
-// margin-left: 16px;
-// margin-right: 16px;
-// margin-top: 16px;
-// justify-content: center;
-
-//   margin-right: 28px;
-
-// @media (min-width: 736px)
-// .eC4Dz {
-//     -webkit-flex-basis: 0;
-//     -ms-flex-preferred-size: 0;
-//     flex-basis: 0;
-//     -webkit-box-flex: 1;
-//     -webkit-flex-grow: 1;
-//     -ms-flex-positive: 1;
-//     flex-grow: 1;
-//     margin-right: 30px;
-// }
-
-// @media (max-width: 735px)
-// .eC4Dz {
-//     -webkit-box-pack: center;
-//     -webkit-justify-content: center;
-//     -ms-flex-pack: center;
-//     justify-content: center;
-//     margin-right: 28px;
-// }
-// flex-shrink: 0;
-
 export const AvatarContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -76,19 +38,6 @@ export const AvatarContainer = styled.div`
   }
 `;
 
-// height: 176px;
-
-// display: flex;
-// flex-direction: column;
-
-// position: absolute;
-// top: -9px;
-// left: -9px;
-
-// element.style {
-
-// }
-
 export const Canvas = styled.div`
   @media (min-width: 735px) {
     width: 130px;
@@ -102,14 +51,6 @@ export const Canvas = styled.div`
     height: 70px;
   }
 `;
-// align-items: center;
-// align-self: center;
-// display: block;
-// flex: none;
-// justify-content: center;
-// position: relative;
-
-// border-radius:
 
 export const Avatar = styled.div`
   height: 100%;
@@ -121,6 +62,8 @@ export const Avatar = styled.div`
 export const Info = styled.section`
   display: flex;
   flex-direction: column;
+  flex-basis: 0;
+  flex-grow: 1;
 `;
 
 export const Row = styled.div`
@@ -143,7 +86,11 @@ export const Row = styled.div`
 // font-size: 28px;
 //     line-height: 32px;
 
-export const Handle = styled.h2``;
+export const Handle = styled.h2`
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 300;
+`;
 
 // desktop
 //   margin-left: 20px;

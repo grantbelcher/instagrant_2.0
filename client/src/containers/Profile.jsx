@@ -23,14 +23,8 @@ export default function ProfileContainer({ children, ...restProps }) {
           </Profile.Canvas>
         </Profile.AvatarContainer>
         <Profile.Info>
-          <Profile.Row>
-            <Profile.Handle>grant.t.b</Profile.Handle>
-            <Profile.FollowBtn>Follow</Profile.FollowBtn>
-          </Profile.Row>
-          {/* <Profile.Row>
-            <Profile.Handle>grant.t.b</Profile.Handle>
-            <Profile.FollowBtn>Follow</Profile.FollowBtn>
-          </Profile.Row> */}
+          <Profile.Handle>grant.t.b</Profile.Handle>
+          <Profile.FollowBtn>Follow</Profile.FollowBtn>
         </Profile.Info>
       </Profile.Header>
     </Profile>
