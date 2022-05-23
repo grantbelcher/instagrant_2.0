@@ -27,7 +27,6 @@ export const Header = styled.div`
 export const AvatarContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: teal;
   margin-right: 28px;
   @media (min-width: 735px) {
     width: 31%;
@@ -59,7 +58,7 @@ export const Avatar = styled.div`
   background: red;
 `;
 
-export const Info = styled.section`
+export const Content = styled.section`
   display: flex;
   flex-direction: column;
   flex-basis: 0;
@@ -67,8 +66,12 @@ export const Info = styled.section`
 `;
 
 export const Row = styled.div`
-  background-color: paleturqouis;
-  border-bottom: solid black 1px;
+  display: flex;
+  margin-bottom: 25px;
+
+  a {
+    font-size: 18px;
+  }
 `;
 
 // @media (min-width: 736px)
@@ -90,8 +93,12 @@ export const Handle = styled.h2`
   font-size: 28px;
   line-height: 32px;
   font-weight: 300;
-  margin-top: 0;
-  margin-bottom: 12px;
+  margin: 0;
+
+  media (max-width: 735px) {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
 `;
 
 // desktop
@@ -124,16 +131,42 @@ export const FollowBtn = styled.button`
   cursor: pointer;
 `;
 
-// font-size: 16px;
-//     margin-right: 40px;
+export const EditBtn = styled.button`
+  margin-left: 20px;
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  color: #262626;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 9px;
+  text-align: center;
+  cursor: pointer;
+`;
+
 // UNSTYLE THIS anchor
 
-export const Statistic = styled.a``;
+export const Statistic = styled.a`
+  font-size: 16px;
+  margin-right: 40px;
+  color: #262626;
+`;
 // color: #262626;
 // font-weight: 600;
 // font-size: 16px;
 // bold number in statistic ALSO Name before bio
 
-export const Emphasis = styled.span``;
+export const Emphasis = styled.span`
+  font-weight: 600;
+`;
+
+export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  * {
+    font-size: 16px;
+    line-height: 24px;
+  }
+`;
 
 export const Bio = styled.div``;

@@ -3,14 +3,17 @@ import {
   Container,
   Header,
   AvatarContainer,
+  Content,
   Info,
   Row,
   Handle,
   FollowBtn,
+  EditBtn,
   Canvas,
   Avatar,
   Link,
   Statistic,
+  Emphasis,
   Bio,
 } from "./styles/profile";
 
@@ -22,8 +25,8 @@ Profile.Header = function ProfileHeader({ children, ...restProps }) {
   return <Header {...restProps}>{children}</Header>;
 };
 
-Profile.Info = function ProfileInfo({ children, ...restProps }) {
-  return <Info {...restProps}>{children}</Info>;
+Profile.Content = function ProfileContent({ children, ...restProps }) {
+  return <Content {...restProps}>{children}</Content>;
 };
 
 Profile.Row = function ProfileRow({ children, ...restProps }) {
@@ -56,8 +59,20 @@ Profile.Link = function ProfileLink({ children, ...restProps }) {
 Profile.FollowBtn = function ProfileFollowBtn({ children, ...restProps }) {
   return <FollowBtn {...restProps}>{children}</FollowBtn>;
 };
+Profile.EditBtn = function ProfileEditBtn({ children, ...restProps }) {
+  return <EditBtn {...restProps}>{children}</EditBtn>;
+};
+
+Profile.Emphasis = function ProfileEmphasis({ children, ...restProps }) {
+  return <Emphasis {...restProps}>{children}</Emphasis>;
+};
+
 Profile.Statistic = function ProfileStatistic({ children, ...restProps }) {
   return <Statistic {...restProps}>{children}</Statistic>;
+};
+
+Profile.Info = function ProfileInfo({ children, ...restProps }) {
+  return <Info {...restProps}>{children}</Info>;
 };
 
 Profile.Bio = function ProfileBio({ children, ...restProps }) {
