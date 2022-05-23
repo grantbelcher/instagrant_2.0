@@ -95,7 +95,7 @@ export const Handle = styled.h2`
   font-weight: 300;
   margin: 0;
 
-  media (max-width: 735px) {
+  @media (max-width: 735px) {
     margin-top: 0;
     margin-bottom: 12px;
   }
