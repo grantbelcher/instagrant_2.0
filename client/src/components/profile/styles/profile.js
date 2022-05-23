@@ -140,7 +140,7 @@ export const Link = styled.a``;
 // text-align: center;
 // cursor: pointer;
 
-export const FollowBtn = styled.btn``;
+export const FollowBtn = styled.button``;
 
 // font-size: 16px;
 //     margin-right: 40px;

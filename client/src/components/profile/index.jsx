@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Container,
   Header,
@@ -9,13 +10,12 @@ import {
   Canvas,
   Avatar,
   Link,
-  FollowBtn,
   Statistic,
   Bio,
 } from "./styles/profile";
 
 export default function Profile({ children, ...restProps }) {
-  return <Container {...restProps}>container</Container>;
+  return <Container {...restProps}>{children}</Container>;
 }
 
 Profile.Header = function ProfileHeader({ children, ...restProps }) {
