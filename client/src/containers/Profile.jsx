@@ -27,14 +27,10 @@ export default function ProfileContainer({ children, ...restProps }) {
             <Profile.Handle>grant.t.b</Profile.Handle>
             <Profile.FollowBtn>Follow</Profile.FollowBtn>
           </Profile.Row>
-          <Profile.Row>
+          {/* <Profile.Row>
             <Profile.Handle>grant.t.b</Profile.Handle>
             <Profile.FollowBtn>Follow</Profile.FollowBtn>
-          </Profile.Row>
-          <Profile.Row>
-            <Profile.Handle>grant.t.b</Profile.Handle>
-            <Profile.FollowBtn>Follow</Profile.FollowBtn>
-          </Profile.Row>
+          </Profile.Row> */}
         </Profile.Info>
       </Profile.Header>
     </Profile>
