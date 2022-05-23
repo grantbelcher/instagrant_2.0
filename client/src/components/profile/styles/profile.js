@@ -90,6 +90,8 @@ export const Handle = styled.h2`
   font-size: 28px;
   line-height: 32px;
   font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 12px;
 `;
 
 // desktop
@@ -108,17 +110,19 @@ export const Handle = styled.h2`
 
 export const Link = styled.a``;
 
-// background-color: #0095f6;
-// border: 1px solid transparent;
-// border-radius: 4px;
-// color: #fff;
-// font-size: 14px;
-// font-weight: 600;
-// padding: 5px 9px;
-// text-align: center;
-// cursor: pointer;
-
-export const FollowBtn = styled.button``;
+// flex: 1 1 auto;
+export const FollowBtn = styled.button`
+  max-width: 250px;
+  background-color: #0095f6;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 9px;
+  text-align: center;
+  cursor: pointer;
+`;
 
 // font-size: 16px;
 //     margin-right: 40px;
