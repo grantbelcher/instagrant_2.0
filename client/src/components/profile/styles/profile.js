@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  @media (min-width: 736px) {
+  @media (min-width: 720px) {
     padding: 30px 20px 0;
     box-sizing: content-box;
     width: calc(100% - 40px);
@@ -16,10 +16,10 @@ export const Header = styled.div`
   margin-bottom: 24px;
   padding-bottom: 0;
 
-  @media (min-width: 736px) {
+  @media (min-width: 720px) {
     margin-bottom: 44px;
   }
-  @media (max-width: 735px) {
+  @media (max-width: 720px) {
     margin: 16px 16px 24px 16px;
   }
 `;
@@ -28,17 +28,17 @@ export const AvatarContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 28px;
-  @media (min-width: 735px) {
+  @media (min-width: 720px) {
     width: 31%;
   }
 
-  @media (max-width: 735px) {
+  @media (max-width: 720px) {
     justify-content: center;
   }
 `;
 
 export const Canvas = styled.div`
-  @media (min-width: 735px) {
+  @media (min-width: 720px) {
     width: 130px;
     height: 130px;
     margin-left: auto;
@@ -95,7 +95,7 @@ export const Handle = styled.h2`
   font-weight: 300;
   margin: 0;
 
-  @media (max-width: 735px) {
+  @media (max-width: 720px) {
     margin-top: 0;
     margin-bottom: 12px;
   }
@@ -119,7 +119,7 @@ export const Link = styled.a``;
 
 // flex: 1 1 auto;
 export const FollowBtn = styled.button`
-  max-width: 250px;
+  max-width: 220px;
   background-color: #0095f6;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -158,6 +158,7 @@ export const Statistic = styled.a`
 
 export const Emphasis = styled.span`
   font-weight: 600;
+  color: #262626;
 `;
 
 export const Info = styled.div`
@@ -167,6 +168,33 @@ export const Info = styled.div`
     font-size: 16px;
     line-height: 24px;
   }
+  @media (max-width: 720px) {
+    padding: 0 20px;
+    * {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+`;
+
+export const MobileStats = styled.ul`
+  list-style: none;
+  display: flex;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  justify-content: space-around;
+  padding: 12px 0;
+`;
+
+export const MobileStatistic = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  justify-content: center;
+  text-align: center;
+  width: 33.3%;
+  color: #8e8e8e;
 `;
 
 export const Bio = styled.div``;

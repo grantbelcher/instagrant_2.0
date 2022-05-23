@@ -3,6 +3,33 @@ import { Profile } from "../components";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 
 export default function ProfileContainer({ children, ...restProps }) {
+  const mobileStatList = (
+    <Profile.MobileStats>
+      <Profile.MobileStatistic>
+        <Profile.Emphasis>254</Profile.Emphasis>
+        <div>followers</div>
+      </Profile.MobileStatistic>
+      <Profile.MobileStatistic>
+        <Profile.Emphasis>254</Profile.Emphasis>
+        <div>followers</div>
+      </Profile.MobileStatistic>
+      <Profile.MobileStatistic>
+        <Profile.Emphasis>254</Profile.Emphasis>
+        <div>followers</div>
+      </Profile.MobileStatistic>
+    </Profile.MobileStats>
+  );
+
+  const profileInfo = (
+    <Profile.Info deviceType={deviceType}>
+      <Profile.Emphasis>Greg Tigersin Blecker</Profile.Emphasis>
+      <Profile.Statistic>San Rafael, California</Profile.Statistic>
+      <Profile.Statistic>
+        You miss 100% of the shots you dont take
+      </Profile.Statistic>
+    </Profile.Info>
+  );
+
   const desktopContent = (
     <>
       <Profile.Row>
@@ -20,13 +47,7 @@ export default function ProfileContainer({ children, ...restProps }) {
           <Profile.Emphasis>366</Profile.Emphasis> following
         </Profile.Statistic>
       </Profile.Row>
-      <Profile.Info>
-        <Profile.Emphasis>Greg Tigersin Blecker</Profile.Emphasis>
-        <Profile.Statistic>San Rafael, California</Profile.Statistic>
-        <Profile.Statistic>
-          You miss 100% of the shots you dont take
-        </Profile.Statistic>
-      </Profile.Info>
+      {profileInfo}
     </>
   );
 
@@ -51,6 +72,8 @@ export default function ProfileContainer({ children, ...restProps }) {
           {deviceType === "mobile" ? mobileContent : desktopContent}
         </Profile.Content>
       </Profile.Header>
+      {deviceType === "mobile" ? profileInfo : null}
+      {deviceType === "mobile" ? mobileStatList : null}
     </Profile>
   );
 }

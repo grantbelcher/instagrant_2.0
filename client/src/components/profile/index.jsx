@@ -14,6 +14,8 @@ import {
   Link,
   Statistic,
   Emphasis,
+  MobileStats,
+  MobileStatistic,
   Bio,
 } from "./styles/profile";
 
@@ -73,6 +75,17 @@ Profile.Statistic = function ProfileStatistic({ children, ...restProps }) {
 
 Profile.Info = function ProfileInfo({ children, ...restProps }) {
   return <Info {...restProps}>{children}</Info>;
+};
+
+Profile.MobileStats = function ProfileMobileStats({ children, ...restProps }) {
+  return <MobileStats {...restProps}>{children}</MobileStats>;
+};
+
+Profile.MobileStatistic = function ProfileMobileStatistic({
+  children,
+  ...restProps
+}) {
+  return <MobileStatistic {...restProps}>{children}</MobileStatistic>;
 };
 
 Profile.Bio = function ProfileBio({ children, ...restProps }) {
