@@ -31,7 +31,9 @@ export const Container = styled.div``;
 //         margin-bottom: 44px;
 //     }
 
-export const Header = styled.div``;
+export const Header = styled.div`
+  background-color: palegoldenrod;
+`;
 
 // @media (min-width: 736px)
 // .eC4Dz {
@@ -55,7 +57,9 @@ export const Header = styled.div``;
 // }
 // flex-shrink: 0;
 
-export const AvatarContainer = styled.div``;
+export const AvatarContainer = styled.div`
+  background-color: teal;
+`;
 
 // element.style {
 //   position: absolute;
@@ -74,16 +78,23 @@ export const AvatarContainer = styled.div``;
 // flex: none;
 // justify-content: center;
 // position: relative;
+
 export const Canvas = styled.div``;
 
 // height: 100%;
 //     width: 100%;
 // border-radius:
+
 export const Avatar = styled.img``;
 
 export const Info = styled.section`
   display: flex;
   flex-direction: column;
+`;
+
+export const Row = styled.div`
+  background-color: paleturqouis;
+  border-bottom: solid black 1px;
 `;
 
 // @media (min-width: 736px)
@@ -100,6 +111,7 @@ export const Info = styled.section`
 // font-weight: 300;
 // font-size: 28px;
 //     line-height: 32px;
+
 export const Handle = styled.h2``;
 
 // desktop
@@ -133,6 +145,7 @@ export const FollowBtn = styled.btn``;
 // font-size: 16px;
 //     margin-right: 40px;
 // UNSTYLE THIS anchor
+
 export const Statistic = styled.a``;
 // color: #262626;
 // font-weight: 600;
