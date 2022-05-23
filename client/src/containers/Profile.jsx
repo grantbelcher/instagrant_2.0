@@ -74,6 +74,7 @@ export default function ProfileContainer({ children, ...restProps }) {
       </Profile.Header>
       {deviceType === "mobile" ? profileInfo : null}
       {deviceType === "mobile" ? mobileStatList : null}
+      {children}
     </Profile>
   );
 }
