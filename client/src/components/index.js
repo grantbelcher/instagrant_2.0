@@ -5,3 +5,4 @@ export { default as UserCard } from "./UserCard";
 export { default as Banner } from "./Banner";
 export { default as Profile } from "./profile";
 export { default as Grid } from "./Grid";
+export { default as Auth } from "./Auth";

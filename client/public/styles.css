@@ -23,9 +23,3 @@ body {
 * {
   box-sizing: border-box;
 }
-
-#profile-page {
-  @media screen (min-width: 735px) {
-    background-color: red;
-  }
-}
