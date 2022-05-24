@@ -169,7 +169,7 @@ export const Info = styled.div`
     line-height: 24px;
   }
   @media (max-width: 720px) {
-    padding: 0 20px;
+    padding: 0 20px 20px;
     * {
       font-size: 14px;
       line-height: 18px;
@@ -184,6 +184,7 @@ export const MobileStats = styled.ul`
   border-bottom: 1px solid #dbdbdb;
   justify-content: space-around;
   padding: 12px 0;
+  margin-bottom: 0;
 `;
 
 export const MobileStatistic = styled.li`
