@@ -20,14 +20,12 @@ body {
   height: 88vh;
 }
 
-.profile-page {
-  @media (min-width: 735px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 * {
   box-sizing: border-box;
+}
+
+#profile-page {
+  @media screen (min-width: 735px) {
+    background-color: red;
+  }
 }

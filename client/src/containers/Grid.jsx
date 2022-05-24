@@ -16,6 +16,26 @@ export default function GridContainer({ children, ...restProps }) {
           <BookmarkSimple size={30} />
         </Grid.Option>
       </Grid.Select>
+      <Grid.Row>
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+        <Grid.Post src="/images/jet-ski.jpg" alt="jet-ski" />
+      </Grid.Row>
     </Grid>
   );
 }
