@@ -2,6 +2,8 @@ import React from "react";
 
 import {
   Container,
+  Image,
+  Main,
   Logo,
   Form,
   Contents,
@@ -18,6 +20,14 @@ import {
 export default function Auth({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
+
+Auth.Image = function AuthImage({ ...restProps }) {
+  return <Image {...restProps} />;
+};
+
+Auth.Main = function AuthMain({ children, ...restProps }) {
+  return <Main {...restProps}>{children}</Main>;
+};
 
 Auth.Logo = function AuthLogo({ ...restProps }) {
   return <Logo {...restProps} />;

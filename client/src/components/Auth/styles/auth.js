@@ -4,8 +4,41 @@ export const Container = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ windowDimensions }) =>
+    windowDimensions === "mobile"
+      ? "white"
+      : "rgba(var(--b3f, 250, 250, 250), 1)"};
+`;
+
+export const Image = styled.img`
+  display: ${({ windowDimensions }) =>
+    windowDimensions === "mobile" ? "none" : "block"};
+  height: 580px;
+  width: 45%;
+  max-width: 420px;
+  margin-bottom: 12px;
+  margin-right: 32px;
+  margin-bottom: 12px;
+  margin-right: 32px;
+  margin-top: auto 0;
+`;
+
+export const Main = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  border: ${({ windowDimensions }) =>
+    windowDimensions === "mobile"
+      ? "none"
+      : "1px solid rgba(var(--b6a, 219, 219, 219), 1)"};
+  border-radius: 1px;
+  max-width: 350px;
+  height: 580px;
+  margin-top: auto 0;
 `;
 
 export const Logo = styled.img`
