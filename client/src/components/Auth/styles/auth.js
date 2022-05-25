@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const Logo = styled.img`
-  margin: 75px 25px;
+  margin: 90px 25px;
 `;
 export const Form = styled.form`
   margin-bottom: 10px;
@@ -23,6 +29,7 @@ export const Banner = styled.div`
   margin: 14px 40px 22px;
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 export const Decoration = styled.div`
@@ -44,11 +51,14 @@ export const BannerText = styled.div`
 `;
 
 export const Input = styled.input`
-  margin: 0 40px 20px;
+  margin: 20px 40px;
   color: #8e8e8e;
+  padding: 10px;
   font-size: 12px;
   height: 36px;
   overflow: hidden;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
 `;
 
 //disables
@@ -57,7 +67,9 @@ export const Input = styled.input`
 export const Button = styled.button`
   margin: 8px 40px;
   background-color: #0095f6;
+  color: white;
   border: 1px solid transparent;
+  border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
   padding: 5px 9px;
@@ -69,11 +81,16 @@ export const Text = styled.p``;
 // width: 100%
 
 export const TextSmall = styled.p`
-  margin: 16px 25% 0;
+  margin: 0 40px 20px;
+  text-align: center;
   color: #8e8e8e;
+  font-size: 14px;
+  line-height: 18px;
 `;
 export const Link = styled.a`
   text-decoration: none;
+  color: #0095f6;
+  font-weight: 600;
 `;
 
 export const Footer = styled.div``;

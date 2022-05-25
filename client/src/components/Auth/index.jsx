@@ -41,8 +41,8 @@ Auth.Banner = function AuthBanner({ children, ...restProps }) {
   );
 };
 
-Auth.Input = function AuthInput({ children, ...restProps }) {
-  return <Input {...restProps} />;
+Auth.Input = function AuthInput({ children, placeholder, ...restProps }) {
+  return <Input {...restProps} placeholder={placeholder} />;
 };
 
 Auth.Button = function AuthButton({ children, ...restProps }) {
