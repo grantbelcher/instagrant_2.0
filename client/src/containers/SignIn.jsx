@@ -1,11 +1,14 @@
 import React from "react";
 import { Auth } from "../components";
 
-export default function SignInContainer() {
+export default function SignInContainer({ windowDimensions }) {
   return (
-    <Auth>
-      <Auth.Image src="/images/landing-page.png" />
-      <Auth.Main>
+    <Auth windowDimensions={windowDimensions}>
+      <Auth.Image
+        src="/images/landing-page.png"
+        windowDimensions={windowDimensions}
+      />
+      <Auth.Main windowDimensions={windowDimensions}>
         <Auth.Logo src="/images/logo.png" alt="logo" page={"sign-in"} />
 
         <Auth.Form>

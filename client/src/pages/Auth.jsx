@@ -7,7 +7,7 @@ export default function AuthPage() {
   const windowDimensions = useWindowDimensions();
   return (
     <>
-      <SignUpContainer windowDimensions={windowDimensions} />
+      <SignInContainer windowDimensions={windowDimensions} />
     </>
   );
 }
