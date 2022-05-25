@@ -3,10 +3,12 @@ import {
   Container,
   Group,
   Avatar,
-  Names,
-  Handle,
+  Text,
+  Main,
+  Sub,
   FollowBtn,
-  Name,
+  Time,
+  Notification,
 } from "./styles/userCard";
 
 export default function UserCard({ children, ...restProps }) {
@@ -21,18 +23,26 @@ UserCard.Avatar = function UserCardAvatar({ children, ...restProps }) {
   return <Avatar {...restProps}>{children}</Avatar>;
 };
 
-UserCard.Names = function UserCardNames({ children, ...restProps }) {
-  return <Names {...restProps}>{children}</Names>;
+UserCard.Text = function UserCardText({ children, ...restProps }) {
+  return <Text {...restProps}>{children}</Text>;
 };
 
-UserCard.Name = function UserCardLink({ children, ...restProps }) {
-  return <Name {...restProps}>{children}</Name>;
+UserCard.Sub = function UserCardSub({ children, ...restProps }) {
+  return <Sub {...restProps}>{children}</Sub>;
 };
 
-UserCard.Handle = function UserCardHandle({ children, ...restProps }) {
-  return <Handle {...restProps}>{children}</Handle>;
+UserCard.Main = function UserCardMain({ children, ...restProps }) {
+  return <Main {...restProps}>{children}</Main>;
 };
 
 UserCard.FollowBtn = function UserCardFollowBtn({ children, ...restProps }) {
   return <FollowBtn {...restProps}>{children}</FollowBtn>;
+};
+
+UserCard.Time = function UserCardTime({ children, ...restProps }) {
+  return <Time {...restProps}>{children}</Time>;
+};
+
+UserCard.Notification = function UserCardNotification() {
+  return <Notification />;
 };

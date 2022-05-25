@@ -43,7 +43,7 @@ export const Main = styled.div`
 
 export const Logo = styled.img`
   margin: ${({ page }) =>
-    page === "sign-in" ? "70px 25px 40px;" : "50px 40px 12px"};
+    page === "sign-in" ? "70px 25px 25px;" : "50px 40px 12px"};
 `;
 export const Form = styled.form`
   margin-bottom: 10px;

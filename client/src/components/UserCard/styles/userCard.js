@@ -21,20 +21,26 @@ export const Avatar = styled.div`
   margin-right: 12px;
 `;
 
-export const Names = styled.div`
+export const Text = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export const Handle = styled.a`
+export const Main = styled.a`
   font-weight: 600;
 `;
 
-export const Name = styled.p`
+export const Sub = styled.p`
   margin: 0;
   margin-top: 4px;
   color: #8e8e8e;
 `;
+
+export const Time = styled.span`
+  color: #8e8e8e;
+`;
+
+export const Notification = styled.div``;
 
 export const FollowBtn = styled.button`
   background-color: ${({ following }) =>

@@ -5,91 +5,105 @@ import { CaretLeft } from "phosphor-react";
 let userInfo = [
   {
     avatar: "",
-    handle: "ramesjivers69",
+    message: "this is a message",
+    time: "4h",
     name: "Lori Gaccioli Tygerson",
-    following: false,
+    unread: true,
   },
   {
     avatar: "",
-    handle: "gregbelch69",
+    message: "this is a long long long long message",
+    time: "4h",
     name: "Greg",
-    following: true,
+    unread: true,
   },
   {
     avatar: "",
-    handle: "ramesjivers69",
+    message: "this is a long long long long message",
+    time: "4h",
     name: "Lori Gaccioli Tygerson",
-    following: false,
+    unread: true,
   },
   {
     avatar: "",
-    handle: "gregbelch69",
+    message: "this is a message",
+    time: "4h",
     name: "Greg",
-    following: true,
+    unread: false,
   },
   {
     avatar: "",
-    handle: "ramesjivers69",
+    message: "this is a long long long long message",
+    time: "4h",
     name: "Lori Gaccioli Tygerson",
-    following: false,
+    unread: false,
   },
   {
     avatar: "",
-    handle: "gregbelch69",
+    message: "this is a long long long long message",
+    time: "4h",
     name: "Greg",
-    following: true,
+    unread: false,
   },
   {
     avatar: "",
-    handle: "ramesjivers69",
+    message: "this is a message",
+    time: "4h",
     name: "Lori Gaccioli Tygerson",
-    following: false,
+    unread: false,
   },
   {
     avatar: "",
-    handle: "gregbelch69",
+    message: "this is a message",
+    time: "4h",
     name: "Greg",
-    following: true,
+    unread: false,
   },
   {
     avatar: "",
-    handle: "ramesjivers69",
+    message: "this is a message",
+    time: "4h",
     name: "Lori Gaccioli Tygerson",
-    following: false,
+    unread: false,
   },
   {
     avatar: "",
-    handle: "gregbelch69",
+    message: "this is a message",
+    time: "4h",
     name: "Greg",
-    following: true,
+    unread: false,
   },
   {
     avatar: "",
-    handle: "ramesjivers69",
+    message: "this is a message",
+    time: "4h",
     name: "Lori Gaccioli Tygerson",
-    following: false,
+    unread: false,
   },
   {
     avatar: "",
-    handle: "gregbelch69",
+    message: "this is a message",
+    time: "4h",
     name: "Greg",
-    following: true,
+    unread: false,
   },
   {
     avatar: "",
-    handle: "ramesjivers69",
+    message: "this is a message",
+    time: "4h",
     name: "Lori Gaccioli Tygerson",
-    following: false,
+    unread: false,
   },
   {
     avatar: "",
-    handle: "gregbelch69",
+    message: "this is a message",
+    time: "4h",
     name: "Greg",
-    following: true,
+    unread: false,
   },
 ];
 
-export default function UserList({ children, ...restProps }) {
+export default function ChatList({ children, ...restProps }) {
   useEffect(() => {
     console.log("yooo", userInfo);
   }, []);
@@ -98,14 +112,14 @@ export default function UserList({ children, ...restProps }) {
       <UserCard>
         <UserCard.Group>
           <UserCard.Avatar src={user.avatar} />
-          <UserCard.Text>
-            <UserCard.Main>{user.handle}</UserCard.Main>
-            <UserCard.Sub>{user.name}</UserCard.Sub>
-          </UserCard.Text>
+          <UserCard.Names>
+            <UserCard.Handle>{user.handle}</UserCard.Handle>
+            {/* <UserCard.Name>{user.name}</UserCard.Name> */}
+          </UserCard.Names>
         </UserCard.Group>
-        <UserCard.FollowBtn following={user.following}>
+        {/* <UserCard.FollowBtn following={user.following}>
           {user.following ? "Following" : "Follow"}
-        </UserCard.FollowBtn>
+        </UserCard.FollowBtn> */}
       </UserCard>
     );
   });
