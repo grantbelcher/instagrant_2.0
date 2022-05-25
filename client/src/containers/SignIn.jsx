@@ -9,6 +9,7 @@ export default function SignInContainer() {
       <Auth.Form>
         <Auth.Contents>
           <Auth.Banner>Welcome</Auth.Banner>
+          <Auth.Text>Sign in to see photos from your friends</Auth.Text>
           <Auth.Input placeholder="username or email" page={"sign-in"} />
           <Auth.Input placeholder="password" type="password" page={"sign-in"} />
 

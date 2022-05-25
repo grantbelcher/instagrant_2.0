@@ -9,6 +9,8 @@ export default function SignUpContainer() {
       <Auth.Form>
         <Auth.Contents>
           <Auth.Banner>Welcome</Auth.Banner>
+          <Auth.Text>Sign up to see photos from your friends</Auth.Text>
+
           <Auth.Input placeholder="Email" />
           <Auth.Input placeholder="Full Name" />
           <Auth.Input placeholder="Username" />

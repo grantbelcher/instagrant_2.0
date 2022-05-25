@@ -9,7 +9,8 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.img`
-  margin: ${({ page }) => (page === "sign-in" ? "70px 25px;" : "5px 40px")};
+  margin: ${({ page }) =>
+    page === "sign-in" ? "70px 25px 40px;" : "50px 40px 12px"};
 `;
 export const Form = styled.form`
   margin-bottom: 10px;
@@ -26,7 +27,7 @@ export const Contents = styled.div`
 `;
 
 export const Banner = styled.div`
-  margin: 14px 40px 22px;
+  margin: 14px 40px 32px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -76,7 +77,14 @@ export const Button = styled.button`
   text-align: center;
 `;
 
-export const Text = styled.p``;
+export const Text = styled.p`
+  margin: 0 40px 10px;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #8e8e8e;
+  text-align: center;
+`;
 
 // width: 100%
 

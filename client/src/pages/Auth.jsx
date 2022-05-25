@@ -5,7 +5,7 @@ import SignUpContainer from "../containers/SignUp";
 export default function AuthPage() {
   return (
     <>
-      <SignInContainer />
+      <SignUpContainer />
     </>
   );
 }
