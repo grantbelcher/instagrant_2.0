@@ -4,13 +4,13 @@ import { Auth } from "../components";
 export default function SignInContainer() {
   return (
     <Auth>
-      <Auth.Logo src="/images/logo.png" />
+      <Auth.Logo src="/images/logo.png" alt="logo" page={"sign-in"} />
 
       <Auth.Form>
         <Auth.Contents>
-          <Auth.Banner>Log In</Auth.Banner>
-          <Auth.Input placeholder="username or email" />
-          <Auth.Input placeholder="password" type="password" />
+          <Auth.Banner>Welcome</Auth.Banner>
+          <Auth.Input placeholder="username or email" page={"sign-in"} />
+          <Auth.Input placeholder="password" type="password" page={"sign-in"} />
 
           <Auth.Button>Log In</Auth.Button>
           <Auth.TextSmall>

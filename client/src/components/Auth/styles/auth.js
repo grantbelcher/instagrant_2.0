@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.img`
-  margin: 90px 25px;
+  margin: ${({ page }) => (page === "sign-in" ? "70px 25px;" : "5px 40px")};
 `;
 export const Form = styled.form`
   margin-bottom: 10px;
@@ -51,7 +51,7 @@ export const BannerText = styled.div`
 `;
 
 export const Input = styled.input`
-  margin: 20px 40px;
+  margin: ${({ page }) => (page === "sign-in" ? "15px 40px" : "5px 40px")};
   color: #8e8e8e;
   padding: 10px;
   font-size: 12px;
@@ -81,7 +81,7 @@ export const Text = styled.p``;
 // width: 100%
 
 export const TextSmall = styled.p`
-  margin: 0 40px 20px;
+  margin: 10px 40px 20px;
   text-align: center;
   color: #8e8e8e;
   font-size: 14px;
