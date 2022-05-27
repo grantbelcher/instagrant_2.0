@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { UserCard, Banner } from "../components";
+import { Banner } from "../components";
+import UserCard from "./UserCard";
 import { CaretLeft } from "phosphor-react";
 
 let userInfo = [
@@ -93,20 +94,14 @@ export default function UserList({ children, ...restProps }) {
   useEffect(() => {
     console.log("yooo", userInfo);
   }, []);
-  const elements = userInfo.map((user) => {
+  const elements = userInfo.map(({ avatar, handle, name, following }) => {
     return (
-      <UserCard>
-        <UserCard.Group>
-          <UserCard.Avatar src={user.avatar} />
-          <UserCard.Text>
-            <UserCard.Main>{user.handle}</UserCard.Main>
-            <UserCard.Sub>{user.name}</UserCard.Sub>
-          </UserCard.Text>
-        </UserCard.Group>
-        <UserCard.FollowBtn following={user.following}>
-          {user.following ? "Following" : "Follow"}
-        </UserCard.FollowBtn>
-      </UserCard>
+      <UserCard
+        avatar={avatar}
+        handle={handle}
+        name={name}
+        following={following}
+      />
     );
   });
 
