@@ -8,9 +8,7 @@ export default function ChatCard({ name, message, unread, time }) {
         <UserCard.Avatar />
         <UserCard.Text>
           <UserCard.Main unread={unread}>{name}</UserCard.Main>
-          <UserCard.Sub unread={unread}>
-            {message} <UserCard.Time>{time}</UserCard.Time>
-          </UserCard.Sub>
+          <UserCard.Sub unread={unread} message={message} time={time} />
         </UserCard.Text>
       </UserCard.Group>
       {unread ? <UserCard.Notification /> : null}

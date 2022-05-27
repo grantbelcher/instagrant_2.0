@@ -4,7 +4,12 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 16px;
+  padding: 8px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #efefef;
+    transition: background-color 0.5s ease-out;
+  }
 `;
 
 export const Group = styled.div`
@@ -33,14 +38,21 @@ export const Main = styled.a`
 export const Sub = styled.p`
   margin: 0;
   margin-top: 4px;
-  color: #8e8e8e;
+  color: ${({ unread }) => (unread ? "black" : "#8e8e8e")};
+  font-weight: ${({ unread }) => (unread ? "600" : "400")};
 `;
 
 export const Time = styled.span`
   color: #8e8e8e;
+  font-weight: 400;
 `;
 
-export const Notification = styled.div``;
+export const Notification = styled.div`
+  height: 8px;
+  width: 8px;
+  border-radius: 8px;
+  background-color: #0095f6;
+`;
 
 export const FollowBtn = styled.button`
   background-color: ${({ following }) =>

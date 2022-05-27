@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { UserCard, Banner } from "../components";
 import { CaretLeft } from "phosphor-react";
+import ChatCard from "./ChatCard";
 
 let userInfo = [
   {
@@ -107,20 +108,15 @@ export default function ChatList({ children, ...restProps }) {
   useEffect(() => {
     console.log("yooo", userInfo);
   }, []);
-  const elements = userInfo.map((user) => {
+  const elements = userInfo.map(({ avatar, name, message, unread, time }) => {
     return (
-      <UserCard>
-        <UserCard.Group>
-          <UserCard.Avatar src={user.avatar} />
-          <UserCard.Names>
-            <UserCard.Handle>{user.handle}</UserCard.Handle>
-            {/* <UserCard.Name>{user.name}</UserCard.Name> */}
-          </UserCard.Names>
-        </UserCard.Group>
-        {/* <UserCard.FollowBtn following={user.following}>
-          {user.following ? "Following" : "Follow"}
-        </UserCard.FollowBtn> */}
-      </UserCard>
+      <ChatCard
+        avatar={avatar}
+        name={name}
+        message={message}
+        unread={unread}
+        time={time}
+      />
     );
   });
 
@@ -130,7 +126,7 @@ export default function ChatList({ children, ...restProps }) {
         <Banner.IconBtn>
           <CaretLeft size={30} />
         </Banner.IconBtn>
-        <Banner.Text>Likes</Banner.Text>
+        <Banner.Text>Messages</Banner.Text>
         <Banner.RightSpace />
       </Banner>
       <div className="user-list">{elements}</div>
