@@ -8,6 +8,4 @@ const config = {
   idleTimoutMillis: 30000,
 };
 
-module.exports = {
-  config,
-};
+module.exports = config;
