@@ -8,7 +8,7 @@ const createTables = () => {
         name VARCHAR(40) NOT NULL,
         email VARCHAR(40) NOT NULL,
         password VARCHAR(50) NOT NULL,
-        title VARCHAR(40)
+        title VARCHAR(40),
         location VARCHAR(50),
         bio VARCHAR(255),
         photo VARCHAR(255)
@@ -52,8 +52,8 @@ const createTables = () => {
         user_id INT REFERENCES users(user_id),
         comment_id INT REFERENCES comments(comment_id)
       )`;
-
-  pool
+  console.log("wtf");
+  return pool
     .query(userTable)
     .then((res) => {
       console.log(res, "response FROM USER TABLE");
@@ -81,7 +81,7 @@ const createTables = () => {
     })
     .catch((err) => {
       console.log(err, "ERROR!!!!!!");
-      pool.end();
+      // pool.end();
     });
 };
 
