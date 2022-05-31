@@ -1,42 +1,46 @@
 const pool = require("./index");
 
+// user_id SERIAL PRIMARY KEY,
+
 const createUserQuery = ({
   username,
-  fullname,
-  bio,
-  title,
-  photo,
+  name,
+  email,
   password,
+  title,
+  location,
+  bio,
+  photo,
 }) => {
-  const values = `"${username}", "${fullname}", "${title}", "${bio}", "${photo}", "${password}"`;
-  return `INSERT INTO users (username, fullname, title, bio, photo, password) VALUES (${values});`;
+  const values = `"${username}", "${name}", "${email}", "${title}", "${location}", "${bio}", "${photo}", "${password}"`;
+  return `INSERT INTO users (username, name, email, title, location, bio, photo, password) VALUES (${values});`;
 };
 
 const createPostQuery = ({
-  authorId,
+  author_id,
   username,
   profilePic,
   location,
   caption,
-  picture,
+  image,
 }) => {
-  const values = `"${authorId}", "${username}", "${profilePic}", "${location}", "${picture}", "${caption}"`;
-  return `INSERT INTO posts (authorId, username, profilePic, location, picture, caption) VALUES (${values});`;
+  const values = `"${authorId}", "${username}", "${profilePic}", "${location}", "${image}", "${caption}"`;
+  return `INSERT INTO posts (authorId, username, profilePic, location, image, caption) VALUES (${values});`;
 };
 
-const createLikeQuery = ({ userId, postId }) => {
+const createPostLikeQuery = ({ userId, postId }) => {
   const values = `${userId}, ${postId}`;
-  return `INSERT INTO likes (userId, postId) VALUES (${values})`;
+  return `INSERT INTO post_likes (user_id, post_id) VALUES (${values})`;
 };
 
-const createFollowQuery = ({ followerId, followingId }) => {
+const createRelationshipQuery = ({ followerId, followingId }) => {
   const values = `${followerId}, ${followingId}`;
-  return `INSERT INTO relationships (followerId, followingId) VALUES (${values})`;
+  return `INSERT INTO relationships (follower_id, following_id) VALUES (${values})`;
 };
 
-const createCommentQuery = ({ userId, postId, text }) => {
-  const values = `${userId}, ${postId}, "${text}"`;
-  return `INSERT INTO comments (userId, postId, text) VALUES (${values})`;
+const createCommentQuery = ({ userId, postId, authorAvatar, text }) => {
+  const values = `${postId}, ${userId}, ${authorAvatar}, "${text}"`;
+  return `INSERT INTO comments (post_id, author_id, author_avatar, text) VALUES (${values})`;
 };
 
 const initialUsers = [
@@ -326,25 +330,6 @@ const titles = [
   "VP of Marketing",
 ];
 
-const firstUsers = [];
-usernames.forEach((name, i) => {
-  const newUser = {};
-  newUser.username = name;
-  newUser.fullname = fullnames[i];
-  newUser.bio = bios[Math.floor(Math.random() * bios.length)];
-  newUser.password = "secret123";
-  newUser.title = titles[Math.floor(Math.random() * titles.length)];
-  newUser.photo = images[Math.floor(Math.random() * images.length)];
-  firstUsers.push(newUser);
-});
-
-const captions = [
-  "Check this out!",
-  "Look at this",
-  "watch this",
-  "me and the boys",
-];
-
 const locations = [
   "Antarctica",
   "USA",
@@ -358,6 +343,39 @@ const locations = [
   "Washington",
   "Colombia",
   "Cartegena",
+  "Eureka, CA",
+  "Medellin",
+  "Lima, Peru",
+  "Washington D.C.",
+  "New York, New York",
+  "Planet Earth",
+  "London, England",
+  "Beijing, China",
+  "Mount Everest",
+  "Mount Shasta",
+  "San Francisco, CA",
+  "Oakland, CA",
+];
+
+const firstUsers = [];
+usernames.forEach((name, i) => {
+  const newUser = {};
+  newUser.username = name;
+  newUser.name = fullnames[i];
+  newUser.email = "email@email.com";
+  newUser.bio = bios[Math.floor(Math.random() * bios.length)];
+  newUser.password = "secret123";
+  newUser.title = titles[Math.floor(Math.random() * titles.length)];
+  newUser.photo = images[Math.floor(Math.random() * images.length)];
+  newUser.location = locations[Math.floor(Math.random() * locations.length)];
+  firstUsers.push(newUser);
+});
+
+const captions = [
+  "Check this out!",
+  "Look at this",
+  "watch this",
+  "me and the boys",
 ];
 
 const firstPosts = [];
@@ -369,7 +387,7 @@ firstUsers.forEach((user, i) => {
     newPost.profilePic = user.photo;
     newPost.location = locations[Math.floor(Math.random() * locations.length)];
     newPost.caption = captions[Math.floor(Math.random() * captions.length)];
-    newPost.picture = images[Math.floor(Math.random() * images.length)];
+    newPost.image = images[Math.floor(Math.random() * images.length)];
     firstPosts.push(newPost);
   }
 });
@@ -402,11 +420,11 @@ firstUsers.forEach((user, i) => {
 });
 
 const firstLikes = [];
-firstPosts.forEach((user, i) => {
-  // generate random number to represent # of accounts this user follows
+firstPosts.forEach((post, i) => {
+  // generate random number to represent # of likes this post has
   const numberOfLikes = Math.floor(Math.random() * 39) + 5;
-  // generate an array of users already followed, include this users id;
-  const likes = [i + 1];
+  // generate an array to store likes for this post;
+  const likes = [];
   // iterate from 1 to that random number
   let j;
   for (j = 1; j < numberOfLikes; j++) {
@@ -451,3 +469,32 @@ const firstCommentsText = [
   "Im going to die for this pic",
   "This picture is eloquent like words",
 ];
+
+const firstComments = [];
+firstPosts.forEach((post, i) => {
+  // generate random number to represent # of accounts this user follows
+  const numberOfComments = Math.floor(Math.random() * 10);
+  // generate an array of users already followed, include this users id;
+  const comments = [i + 1];
+  // iterate from 1 to that random number
+  let j;
+  for (j = 1; j < numberOfComments; j++) {
+    // generate random number for the userId
+    const userId = Math.floor(Math.random() * 69);
+    // check if it is in array of users followed
+    const alreadyCommented = comments.includes(userId);
+    if (!alreadyCommented) {
+      // create new Follow object
+      const newComment = {};
+      newComment.postId = i + 1;
+      newComment.userId = userId;
+      newComment.authorAvatar = firstUsers[userId].photo;
+      newComment.text =
+        firstCommentsText[Math.floor(Math.random() * firstCommentsText.length)];
+      firstComments.push(newComment);
+      comments.push(userId);
+    } else {
+      j -= 1;
+    }
+  }
+});

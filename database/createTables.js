@@ -17,8 +17,9 @@ const createTables = () => {
     posts(
       post_id SERIAL PRIMARY KEY,
       author_id INT REFERENCES users (user_id),
+      username VARCHAR(40) NOT NULL,
       profilePic VARCHAR(255),
-      image VARCHAR(128) NOT NULL,
+      image VARCHAR(255) NOT NULL,
       location VARCHAR(50),
       caption VARCHAR(300),
       created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
@@ -29,7 +30,7 @@ const createTables = () => {
         post_id INT REFERENCES posts (post_id),
         author_id INT REFERENCES users (user_id),
         author_avatar VARCHAR(128),
-        text VARCHAR(100),
+        text VARCHAR(255),
         reply_id INT REFERENCES comments (comment_id)
       )`;
 
