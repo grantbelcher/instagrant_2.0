@@ -358,6 +358,7 @@ const locations = [
 ];
 
 const firstUsers = [];
+
 usernames.forEach((name, i) => {
   const newUser = {};
   newUser.username = name;
@@ -499,18 +500,25 @@ firstPosts.forEach((post, i) => {
 });
 
 const seedDB = () => {
-  console.log(firstUsers.length, "length");
-  firstUsers.forEach((user, i) => {
-    const insertQuery = createUserQuery(user);
+  let x = 0;
+  while (x < 70) {
+    console.log(x);
+    const insertQuery = createUserQuery(firstUsers[x]);
     pool
       .query(insertQuery)
       .then((res) => {
         console.log(res, "response");
       })
-      .catch((err) => {
-        console.log(err, "ERROR IN CATCH");
+      .catch((err, err2) => {
+        console.log(m, "CATCH");
+        console.log(err, err2, "ERROR IN CATCH");
       });
-  });
+    x++;
+  }
+
+  // firstUsers.forEach((user, i) => {
+  //   const insertQuery = createUserQuery(user);
+  // });
   // const insertQuery = createUserQuery(firstUsers[0]);
   // console.log(insertQuery);
   // pool
