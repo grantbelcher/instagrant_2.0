@@ -12,8 +12,8 @@ const createUserQuery = ({
   bio,
   photo,
 }) => {
-  const values = `"${username}", "${name}", "${email}", "${title}", "${location}", "${bio}", "${photo}", "${password}"`;
-  return `INSERT INTO users (username, name, email, title, location, bio, photo, password) VALUES (${values});`;
+  const values = `'${username}', '${name}', '${email}', '${password}', '${title}', '${location}', '${bio}', '${photo}'`;
+  return `INSERT INTO users (username, name, email, password, title, location, bio, photo) VALUES (${values});`;
 };
 
 const createPostQuery = ({
@@ -400,7 +400,6 @@ firstUsers.forEach((user, i) => {
   const following = [i + 1];
   // iterate from 1 to that random number
   let j;
-  console.log(following);
   for (j = 1; j < numberFollowing; j++) {
     // generate random number for the userId
     const userId = Math.floor(Math.random() * 69) + 1;
@@ -498,3 +497,26 @@ firstPosts.forEach((post, i) => {
     }
   }
 });
+
+const seedDB = () => {
+  console.log(firstUsers.length, "length");
+  firstUsers.forEach((user, i) => {
+    const insertQuery = createUserQuery(user);
+    pool
+      .query(insertQuery)
+      .then((res) => {
+        console.log(res, "response");
+      })
+      .catch((err) => {
+        console.log(err, "ERROR IN CATCH");
+      });
+  });
+  // const insertQuery = createUserQuery(firstUsers[0]);
+  // console.log(insertQuery);
+  // pool
+  //   .query(insertQuery)
+  //   .then((res) => console.log(res, "response"))
+  //   .catch((err) => console.log(err, "error"));
+};
+
+seedDB();
