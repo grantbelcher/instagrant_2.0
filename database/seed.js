@@ -507,13 +507,12 @@ const seedDB = () => {
     pool
       .query(insertQuery)
       .then((res) => {
-        console.log(res, "response");
+        console.log(res, x, "AFTER INSERTION");
       })
       .catch((err, err2) => {
-        console.log(m, "CATCH");
+        console.log(x, "CATCH");
         console.log(err, err2, "ERROR IN CATCH");
       });
-    x++;
   }
 
   // firstUsers.forEach((user, i) => {
