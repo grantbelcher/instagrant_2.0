@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const pool = require("../database/index");
 
 const PORT = 1000;
 const app = express();
@@ -29,9 +30,25 @@ const createUserQuery = ({
   return `INSERT INTO users (username, name, email, password, title, location, bio, photo) VALUES (${values});`;
 };
 
+app.get("/user", (req, res) => {
+  pool.query("select * from users", (err, message) => {
+    console.log(err, message, "yooo");
+    res.send("response");
+  });
+});
+
 app.post("/user", (req, res) => {
-  console.log(req.body, "look here");
-  res.send("recieved");
+  const queryString = createUserQuery(req.body);
+  console.log("yoooo");
+  pool
+    .query(queryString)
+    .then((response) => {
+      console.log(response, "response");
+      res.send("yoo");
+    })
+    .catch((err) => {
+      res.send(err);
+    });
 });
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
