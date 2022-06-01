@@ -500,19 +500,17 @@ firstPosts.forEach((post, i) => {
 });
 
 const seedDB = () => {
+  console.log(firstUsers.length);
   let x = 0;
   while (x < 70) {
-    console.log(x);
     const insertQuery = createUserQuery(firstUsers[x]);
     pool
       .query(insertQuery)
-      .then((res) => {
-        console.log(res, x, "AFTER INSERTION");
-      })
+      .then((res) => {})
       .catch((err, err2) => {
-        console.log(x, "CATCH");
-        console.log(err, err2, "ERROR IN CATCH");
+        console.log(insertQuery);
       });
+    x++;
   }
 
   // firstUsers.forEach((user, i) => {
