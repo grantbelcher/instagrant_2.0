@@ -17,15 +17,15 @@ const createUserQuery = ({
 };
 
 const createPostQuery = ({
-  author_id,
+  authorId,
   username,
   profilePic,
   location,
   caption,
   image,
 }) => {
-  const values = `"${authorId}", "${username}", "${profilePic}", "${location}", "${image}", "${caption}"`;
-  return `INSERT INTO posts (authorId, username, profilePic, location, image, caption) VALUES (${values});`;
+  const values = `${authorId}, '${username}', '${profilePic}', '${location}', '${image}', '${caption}'`;
+  return `INSERT INTO posts (author_id, username, profilepic, location, image, caption) VALUES (${values});`;
 };
 
 const createPostLikeQuery = ({ userId, postId }) => {
@@ -499,29 +499,148 @@ firstPosts.forEach((post, i) => {
   }
 });
 
-const seedDB = () => {
-  console.log(firstUsers.length);
-  let x = 0;
-  while (x < 70) {
-    const insertQuery = createUserQuery(firstUsers[x]);
-    pool
-      .query(insertQuery)
-      .then((res) => {})
-      .catch((err, err2) => {
-        console.log(err, insertQuery);
-      });
-    x++;
-  }
+const seedData = () => {
+  const userTable = `CREATE TABLE IF NOT EXISTS
+      users(
+        user_id SERIAL PRIMARY KEY,
+        username VARCHAR(40) NOT NULL,
+        name VARCHAR(40) NOT NULL,
+        email VARCHAR(40) NOT NULL,
+        password VARCHAR(50) NOT NULL,
+        title VARCHAR(40),
+        location VARCHAR(50),
+        bio VARCHAR(255),
+        photo VARCHAR(255)
+      )`;
+  const postTable = `CREATE TABLE IF NOT EXISTS
+    posts(
+      post_id SERIAL PRIMARY KEY,
+      author_id INT REFERENCES users (user_id),
+      username VARCHAR(40) NOT NULL,
+      profilePic VARCHAR(255),
+      image VARCHAR(255) NOT NULL,
+      location VARCHAR(50),
+      caption VARCHAR(300),
+      created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    )`;
+  const commentTable = `CREATE TABLE IF NOT EXISTS
+      comments(
+        comment_id SERIAL PRIMARY KEY,
+        post_id INT REFERENCES posts (post_id),
+        author_id INT REFERENCES users (user_id),
+        author_avatar VARCHAR(128),
+        text VARCHAR(255),
+        reply_id INT REFERENCES comments (comment_id)
+      )`;
 
-  // firstUsers.forEach((user, i) => {
-  //   const insertQuery = createUserQuery(user);
-  // });
-  // const insertQuery = createUserQuery(firstUsers[0]);
-  // console.log(insertQuery);
-  // pool
-  //   .query(insertQuery)
-  //   .then((res) => console.log(res, "response"))
-  //   .catch((err) => console.log(err, "error"));
+  const relationshipTable = `CREATE TABLE IF NOT EXISTS
+      relationships(
+        follow_id SERIAL PRIMARY KEY,
+        follower_id INT REFERENCES users(user_id),
+        following_id INT REFERENCES users(user_id)
+      )`;
+  const postLikes = `CREATE TABLE IF NOT EXISTS
+      post_likes(
+        like_id SERIAL PRIMARY KEY,
+        user_id INT REFERENCES users(user_id),
+        post_id INT REFERENCES posts (post_id)
+      )`;
+  const commentLikesTable = `CREATE TABLE IF NOT EXISTS
+      comment_likes(
+        like_id SERIAL PRIMARY KEY,
+        user_id INT REFERENCES users(user_id),
+        comment_id INT REFERENCES comments(comment_id)
+      )`;
+  return pool
+    .query(userTable)
+    .then((res) => {
+      console.log(res, "response FROM USER TABLE");
+      return pool.query(postTable);
+    })
+    .then((res) => {
+      console.log(res, "response from POST TABLE");
+      return pool.query(commentTable);
+    })
+    .then((res) => {
+      console.log(res, "response from COMMENT TABLE");
+      return pool.query(relationshipTable);
+    })
+    .then((res) => {
+      console.log(res, "response from RELATIONSHIP TABLE");
+      return pool.query(postLikes);
+    })
+    .then((res) => {
+      console.log(res, "response from POST-LIKES TABLE");
+      return pool.query(commentLikesTable);
+    })
+    .then((res) => {
+      console.log(res, "RESPONSE FROM COMMENT-LIKES TABLE");
+      let x = 0;
+      while (x < 70) {
+        const insertQuery = createUserQuery(firstUsers[x]);
+        pool
+          .query(insertQuery)
+          .then((res) => {})
+          .catch((err, err2) => {
+            console.log(err, insertQuery);
+          });
+        x++;
+      }
+      return "users seeded?";
+    })
+    .then((message) => {
+      console.log(message, "message");
+      firstPosts.forEach((post) => {
+        const insertQuery = createPostQuery(post);
+        pool
+          .query(insertQuery)
+          .then((res) => {
+            console.log("post created");
+          })
+          .catch((err) => console.log(err, insertQuery));
+      });
+    })
+    .catch((err) => {
+      console.log(err, "ERROR!!!!!!");
+      // pool.end();
+    });
 };
 
-seedDB();
+// const seedDB = () => {
+//   console.log(firstUsers.length);
+//   let x = 0;
+//   while (x < 70) {
+//     const insertQuery = createUserQuery(firstUsers[x]);
+//     pool
+//       .query(insertQuery)
+//       .then((res) => {})
+//       .catch((err, err2) => {
+//         console.log(err, insertQuery);
+//       })
+//     x++;
+//   }
+
+//   const createPostQuery = ({
+//     author_id,
+//     username,
+//     profilePic,
+//     location,
+//     caption,
+//     image,
+//   }) => {
+//     const values = `"${authorId}", "${username}", "${profilePic}", "${location}", "${image}", "${caption}"`;
+//     return `INSERT INTO posts (authorId, username, profilePic, location, image, caption) VALUES (${values});`;
+//   };
+
+//   // firstUsers.forEach((user, i) => {
+//   //   const insertQuery = createUserQuery(user);
+//   // });
+//   // const insertQuery = createUserQuery(firstUsers[0]);
+//   // console.log(insertQuery);
+//   // pool
+//   //   .query(insertQuery)
+//   //   .then((res) => console.log(res, "response"))
+//   //   .catch((err) => console.log(err, "error"));
+// };
+
+seedData();
