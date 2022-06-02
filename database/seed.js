@@ -305,7 +305,7 @@ const images = [
 // console.log(Math.floor(Math.random() * images.length))
 
 const bios = [
-  "I'm so random!!!",
+  "I am so random!!!",
   "So many of my smiles are because of you.",
   "So grateful to be sharing my world with you.",
   "All your dreams can come true and Ill make sure of it.",
@@ -508,7 +508,7 @@ const seedDB = () => {
       .query(insertQuery)
       .then((res) => {})
       .catch((err, err2) => {
-        console.log(insertQuery);
+        console.log(err, insertQuery);
       });
     x++;
   }
