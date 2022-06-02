@@ -1,7 +1,5 @@
 const pool = require("./index");
 
-// user_id SERIAL PRIMARY KEY,
-
 const createUserQuery = ({
   username,
   name,
@@ -39,7 +37,7 @@ const createRelationshipQuery = ({ followerId, followingId }) => {
 };
 
 const createCommentQuery = ({ userId, postId, authorAvatar, text }) => {
-  const values = `${postId}, ${userId}, ${authorAvatar}, "${text}"`;
+  const values = `${postId}, ${userId}, '${authorAvatar}', '${text}'`;
   return `INSERT INTO comments (post_id, author_id, author_avatar, text) VALUES (${values})`;
 };
 
@@ -429,7 +427,7 @@ firstPosts.forEach((post, i) => {
   let j;
   for (j = 1; j < numberOfLikes; j++) {
     // generate random number for the userId
-    const userId = Math.floor(Math.random() * 69);
+    const userId = Math.floor(Math.random() * 69) + 1;
     // check if it is in array of users followed
     const alreadyLiked = likes.includes(userId);
     if (!alreadyLiked) {
@@ -458,12 +456,12 @@ const firstCommentsText = [
   "Beauty is power; a smile is its sword",
   "This place looks exotic",
   "I love how vibrant colors are in the picture",
-  "Such a scenic view ,looks great",
+  "Such a scenic view,looks great",
   "Impressive picture",
   "Adorable picture and Your smile makes me Happy.",
   "Looking Gorgeous and This picture made my day.",
   "Amazing, i have never seen Photo like this",
-  "Oh! Very beautiful Im fall in love with this Image",
+  "Oh! Very beautiful Im falling in love with this Image",
   "This picture is better than better",
   "Perfect Click without any doubt",
   "Im going to die for this pic",
@@ -480,7 +478,7 @@ firstPosts.forEach((post, i) => {
   let j;
   for (j = 1; j < numberOfComments; j++) {
     // generate random number for the userId
-    const userId = Math.floor(Math.random() * 69);
+    const userId = Math.floor(Math.random() * 69) + 1;
     // check if it is in array of users followed
     const alreadyCommented = comments.includes(userId);
     if (!alreadyCommented) {
@@ -499,7 +497,7 @@ firstPosts.forEach((post, i) => {
   }
 });
 
-const seedData = () => {
+const seedDatabase = () => {
   const userTable = `CREATE TABLE IF NOT EXISTS
       users(
         user_id SERIAL PRIMARY KEY,
@@ -612,6 +610,28 @@ const seedData = () => {
             .catch((err) => console.log(err, insertQuery));
         });
       })
+      .then(() => {
+        firstLikes.forEach((like) => {
+          const insertQuery = createPostLikeQuery(like);
+          pool
+            .query(insertQuery)
+            .then((res) => {
+              console.log("like created");
+            })
+            .catch((err) => console.log(err, insertQuery));
+        });
+      })
+      .then(() => {
+        firstComments.forEach((comment) => {
+          const insertQuery = createCommentQuery(comment);
+          pool
+            .query(insertQuery)
+            .then((res) => {
+              console.log("comment created");
+            })
+            .catch((err) => console.log(err, insertQuery));
+        });
+      })
       // })
       .catch((err) => {
         console.log(err, "ERROR!!!!!!");
@@ -620,41 +640,4 @@ const seedData = () => {
   );
 };
 
-// const seedDB = () => {
-//   console.log(firstUsers.length);
-//   let x = 0;
-//   while (x < 70) {
-//     const insertQuery = createUserQuery(firstUsers[x]);
-//     pool
-//       .query(insertQuery)
-//       .then((res) => {})
-//       .catch((err, err2) => {
-//         console.log(err, insertQuery);
-//       })
-//     x++;
-//   }
-
-//   const createPostQuery = ({
-//     author_id,
-//     username,
-//     profilePic,
-//     location,
-//     caption,
-//     image,
-//   }) => {
-//     const values = `"${authorId}", "${username}", "${profilePic}", "${location}", "${image}", "${caption}"`;
-//     return `INSERT INTO posts (authorId, username, profilePic, location, image, caption) VALUES (${values});`;
-//   };
-
-//   // firstUsers.forEach((user, i) => {
-//   //   const insertQuery = createUserQuery(user);
-//   // });
-//   // const insertQuery = createUserQuery(firstUsers[0]);
-//   // console.log(insertQuery);
-//   // pool
-//   //   .query(insertQuery)
-//   //   .then((res) => console.log(res, "response"))
-//   //   .catch((err) => console.log(err, "error"));
-// };
-
-seedData();
+seedDatabase();

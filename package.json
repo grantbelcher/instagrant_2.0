@@ -8,7 +8,8 @@
     "build": "webpack --config webpack.config.js --mode production",
     "bundle-dev": "webpack --watch",
     "start-dev": "nodemon ./server/index.js",
-    "create-tables": "node ./database/createTables.js createTables"
+    "create-tables": "node ./database/createTables.js createTables",
+    "seed_data": "node ./database/seed.js"
   },
   "repository": {
     "type": "git",
