@@ -551,59 +551,73 @@ const seedData = () => {
         user_id INT REFERENCES users(user_id),
         comment_id INT REFERENCES comments(comment_id)
       )`;
-  return pool
-    .query(userTable)
-    .then((res) => {
-      console.log(res, "response FROM USER TABLE");
-      return pool.query(postTable);
-    })
-    .then((res) => {
-      console.log(res, "response from POST TABLE");
-      return pool.query(commentTable);
-    })
-    .then((res) => {
-      console.log(res, "response from COMMENT TABLE");
-      return pool.query(relationshipTable);
-    })
-    .then((res) => {
-      console.log(res, "response from RELATIONSHIP TABLE");
-      return pool.query(postLikes);
-    })
-    .then((res) => {
-      console.log(res, "response from POST-LIKES TABLE");
-      return pool.query(commentLikesTable);
-    })
-    .then((res) => {
-      console.log(res, "RESPONSE FROM COMMENT-LIKES TABLE");
-      let x = 0;
-      while (x < 70) {
-        const insertQuery = createUserQuery(firstUsers[x]);
-        pool
-          .query(insertQuery)
-          .then((res) => {})
-          .catch((err, err2) => {
-            console.log(err, insertQuery);
-          });
-        x++;
-      }
-      return "users seeded?";
-    })
-    .then((message) => {
-      console.log(message, "message");
-      firstPosts.forEach((post) => {
-        const insertQuery = createPostQuery(post);
-        pool
-          .query(insertQuery)
-          .then((res) => {
-            console.log("post created");
-          })
-          .catch((err) => console.log(err, insertQuery));
-      });
-    })
-    .catch((err) => {
-      console.log(err, "ERROR!!!!!!");
-      // pool.end();
-    });
+  return (
+    pool
+      .query(userTable)
+      .then((res) => {
+        console.log(res, "response FROM USER TABLE");
+        return pool.query(postTable);
+      })
+      .then((res) => {
+        console.log(res, "response from POST TABLE");
+        return pool.query(commentTable);
+      })
+      .then((res) => {
+        console.log(res, "response from COMMENT TABLE");
+        return pool.query(relationshipTable);
+      })
+      .then((res) => {
+        console.log(res, "response from RELATIONSHIP TABLE");
+        return pool.query(postLikes);
+      })
+      .then((res) => {
+        console.log(res, "response from POST-LIKES TABLE");
+        return pool.query(commentLikesTable);
+      })
+      .then((res) => {
+        console.log(res, "RESPONSE FROM COMMENT-LIKES TABLE");
+        let x = 0;
+        while (x < 70) {
+          const insertQuery = createUserQuery(firstUsers[x]);
+          pool
+            .query(insertQuery)
+            .then((res) => {})
+            .catch((err, err2) => {
+              console.log(err, insertQuery);
+            });
+          x++;
+        }
+        return "users seeded?";
+      })
+      .then((message) => {
+        console.log(message, "message");
+        firstPosts.forEach((post) => {
+          const insertQuery = createPostQuery(post);
+          pool
+            .query(insertQuery)
+            .then((res) => {
+              console.log("post created");
+            })
+            .catch((err) => console.log(err, insertQuery));
+        });
+      })
+      .then(() => {
+        firstFollows.forEach((follow) => {
+          const insertQuery = createRelationshipQuery(follow);
+          pool
+            .query(insertQuery)
+            .then((res) => {
+              console.log("follow created");
+            })
+            .catch((err) => console.log(err, insertQuery));
+        });
+      })
+      // })
+      .catch((err) => {
+        console.log(err, "ERROR!!!!!!");
+        // pool.end();
+      })
+  );
 };
 
 // const seedDB = () => {
