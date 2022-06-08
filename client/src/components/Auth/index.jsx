@@ -16,6 +16,7 @@ import {
   Text,
   TextSmall,
   Link,
+  Avatar,
 } from "./styles/auth";
 
 export default function Auth({ children, ...restProps }) {
@@ -74,4 +75,8 @@ Auth.TextSmall = function AuthTextSmall({ children, ...restProps }) {
 
 Auth.Link = function AuthLink({ children, ...restProps }) {
   return <Link>{children}</Link>;
+};
+
+Auth.Avatar = function AuthAvatar({ children, ...restProps }) {
+  return <Avatar />;
 };

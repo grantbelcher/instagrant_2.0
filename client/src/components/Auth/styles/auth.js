@@ -144,8 +144,17 @@ export const TextSmall = styled.p`
 `;
 export const Link = styled.a`
   text-decoration: none;
+  text-align: center;
   color: #0095f6;
   font-weight: 600;
+`;
+
+export const Avatar = styled.div`
+  background-color: red;
+  height: 70px;
+  width: 70px;
+  border-radius: 70px;
+  margin-bottom: 15px;
 `;
 
 export const Footer = styled.div``;

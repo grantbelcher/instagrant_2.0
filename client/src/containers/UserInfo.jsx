@@ -4,18 +4,19 @@ import { Auth } from "../components";
 export default function UserInfoContainer({ windowDimensions }) {
   return (
     <Auth windowDimensions={windowDimensions}>
-      <Auth.Image
+      {/* <Auth.Image
         src="/images/landing-page.png"
         windowDimensions={windowDimensions}
-      />
+      /> */}
       <Auth.Main windowDimensions={windowDimensions}>
-        <Auth.Logo src="/images/logo.png" />
-
+        {/* <Auth.Logo src="/images/logo.png" /> */}
+        <Auth.Avatar />
+        <Auth.Link>Change Profile Photo</Auth.Link>
         <Auth.Form>
           <Auth.Contents>
-            <Auth.Banner>User Info</Auth.Banner>
-            <Auth.Text>Tell Us About Yourself</Auth.Text>
+            {/* <Auth.Text>Tell Us About Yourself</Auth.Text> */}
 
+            <Auth.TextSmall>User Info</Auth.TextSmall>
             <Auth.Input placeholder="Title" />
             <Auth.Input placeholder="Full Name" />
             <Auth.Input placeholder="Location" />
