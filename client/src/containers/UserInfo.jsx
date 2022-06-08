@@ -13,13 +13,14 @@ export default function UserInfoContainer({ windowDimensions }) {
 
         <Auth.Form>
           <Auth.Contents>
-            <Auth.Banner>Welcome</Auth.Banner>
+            <Auth.Banner>User Info</Auth.Banner>
             <Auth.Text>Tell Us About Yourself</Auth.Text>
 
             <Auth.Input placeholder="Title" />
             <Auth.Input placeholder="Full Name" />
+            <Auth.Input placeholder="Location" />
             <Auth.TextArea placeholder="Bio" />
-            <Auth.Button>Create Account</Auth.Button>
+            <Auth.Button>Update Info</Auth.Button>
           </Auth.Contents>
         </Auth.Form>
       </Auth.Main>
