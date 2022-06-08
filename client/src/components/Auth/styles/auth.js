@@ -95,6 +95,20 @@ export const Input = styled.input`
   border-radius: 3px;
 `;
 
+export const TextArea = styled.textarea`
+  resize: none;
+  font-size: 14px;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  margin: 5px 40px;
+  color: black;
+  padding: 10px;
+  font-size: 12px;
+  height: 50px;
+  overflow: hidden;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+`;
+
 //disables
 // background-color: rgba(0,149,246,.3);
 // pointer-events: none;

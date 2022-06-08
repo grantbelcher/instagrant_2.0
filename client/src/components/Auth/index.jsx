@@ -11,6 +11,7 @@ import {
   Decoration,
   BannerText,
   Input,
+  TextArea,
   Button,
   Text,
   TextSmall,
@@ -53,6 +54,10 @@ Auth.Banner = function AuthBanner({ children, ...restProps }) {
 
 Auth.Input = function AuthInput({ children, placeholder, ...restProps }) {
   return <Input {...restProps} placeholder={placeholder} />;
+};
+
+Auth.TextArea = function AuthTextArea({ children, placeholder, ...restProps }) {
+  return <TextArea placeholder={placeholder} />;
 };
 
 Auth.Button = function AuthButton({ children, ...restProps }) {
