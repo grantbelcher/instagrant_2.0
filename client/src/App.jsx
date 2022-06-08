@@ -9,7 +9,7 @@ import AuthPage from "./pages/Auth";
 const App = () => {
   return (
     <>
-      <UserList />
+      <AuthPage />
     </>
   );
 };

@@ -83,10 +83,10 @@ export const BannerText = styled.div`
   margin: 0 18px;
   text-transform: uppercase;
 `;
-
+// color: #8e8e8e;
 export const Input = styled.input`
   margin: ${({ page }) => (page === "sign-in" ? "15px 40px" : "5px 40px")};
-  color: #8e8e8e;
+  color: black;
   padding: 10px;
   font-size: 12px;
   height: 36px;

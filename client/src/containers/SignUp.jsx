@@ -17,10 +17,9 @@ export default function SignUpContainer({ windowDimensions }) {
             <Auth.Text>Sign up to see photos from your friends</Auth.Text>
 
             <Auth.Input placeholder="Email" />
-            <Auth.Input placeholder="Full Name" />
             <Auth.Input placeholder="Username" />
-
             <Auth.Input placeholder="password" type="password" />
+            <Auth.Input placeholder="confirm password" type="password" />
 
             <Auth.Button>Sign Up</Auth.Button>
             <Auth.TextSmall>
