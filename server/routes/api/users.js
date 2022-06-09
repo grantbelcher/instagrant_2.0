@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
+require("dotenv").config();
+const jwt = require("jsonwebtoken");
 const pool = require("../../../database/index");
 const { createUserQuery } = require("../../../database/queries/users");
 
@@ -50,7 +52,27 @@ router.post(
         pool
           .query(queryString)
           .then((result) => {
-            console.log(result, "RESULT INSERTING USER");
+            return pool.query(
+              `SELECT * FROM users WHERE username = '${username}'`
+            );
+          })
+          .then((data) => {
+            const { user_id: userId } = data.rows[0];
+            jwt.sign(
+              { userId },
+              process.env.JWT_SECRET,
+              {
+                expiresIn: "1h",
+              },
+              (err, token) => {
+                if (err) {
+                  console.log(err, "ERROR CREATING TOKEN");
+                } else {
+                  return res.json({ token });
+                }
+              }
+            );
+            // return res.json({ token, username, userId });
           })
           .catch((err) => {
             console.log(err, "ERROR ON INSERTION");
