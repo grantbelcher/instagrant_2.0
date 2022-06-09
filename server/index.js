@@ -7,7 +7,7 @@ const PORT = 1000;
 const app = express();
 // create application/json parser
 
-// parse application/json
+// init json bodyparser middleware
 app.use(bodyParser.json());
 
 app.use("/", express.static(path.join(__dirname, "../client/public")));
