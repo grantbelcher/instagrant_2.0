@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
+const pool = require("../../../database/index");
+const { createUserQuery } = require("../../../database/queries/users");
 
 // @route     GET api/users
 // @desc      Test Route
@@ -17,26 +19,53 @@ router.post(
     check("username", "username is required").notEmpty(),
     // check that email exists in req body
     check("email", "email is required").notEmpty(),
+    check("username", "name is required").notEmpty(),
     // check password is longer than 6 characters
     check("password", "password must be 6 or more characters").isLength({
       min: 6,
     }),
   ],
-  (req, res) => {
+  async (req, res) => {
     const errors = validationResult(req);
     // check if errors exist
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    // see if user exists
+    // destructure request body
+    const { username, email, password, name, title, location, bio, photo } =
+      req.body;
 
-    // if user exists => send error
+    const userInfo = req.body;
+
+    // see if user exists
+    pool
+      .query(`SELECT * FROM users WHERE username ='${username}'`)
+      .then((result) => {
+        // if user exists => send error
+        if (result.rows.length) {
+          res.status(400).json({ errors: [{ msg: "User already exists" }] });
+        }
+        console.log(req.body);
+        const queryString = createUserQuery(userInfo);
+        pool
+          .query(queryString)
+          .then((result) => {
+            console.log(result, "RESULT INSERTING USER");
+          })
+          .catch((err) => {
+            console.log(err, "ERROR ON INSERTION");
+          });
+      })
+      .catch((error) => {
+        console.log(error, "server error");
+        res.status(500).send("server error");
+      });
 
     // encrypt password
 
     // return json webtoken
 
-    return res.status(200).send(req.body);
+    // return res.status(200).send(req.body);
   }
 );
 
