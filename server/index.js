@@ -16,19 +16,10 @@ app.get("/", (req, res) => {
   res.send(`listening on port ${PORT}`);
 });
 
-const createUserQuery = ({
-  username,
-  name,
-  email,
-  password,
-  title,
-  location,
-  bio,
-  photo,
-}) => {
-  const values = `'${username}', '${name}', '${email}', '${password}', '${title}', '${location}', '${bio}', '${photo}'`;
-  return `INSERT INTO users (username, name, email, password, title, location, bio, photo) VALUES (${values});`;
-};
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/auth", require("./routes/api/auth"));
+app.use("/api/posts", require("./routes/api/posts"));
+app.use("/api/profile", require("./routes/api/profile"));
 
 app.get("/user", (req, res) => {
   pool.query("select * from users", (err, message) => {
@@ -37,7 +28,7 @@ app.get("/user", (req, res) => {
   });
 });
 
-app.post("/user", (req, res) => {
+app.post("/api/user", (req, res) => {
   const queryString = createUserQuery(req.body);
   console.log("yoooo");
   pool
